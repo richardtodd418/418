@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo1 from './teapot-1.svg';
+import logo2 from './teapot-2.svg';
+
 import './App.css';
 
 class App extends Component {
@@ -7,18 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <img src={logo1} className="App-logo" alt="logo" />
         </header>
       </div>
     );
@@ -26,3 +17,4 @@ class App extends Component {
 }
 
 export default App;
+
