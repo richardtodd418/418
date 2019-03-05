@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo1 from './teapot-1.svg';
-import logo2 from './teapot-2.svg';
+// import logo2 from './teapot-2.svg';
 
 import './App.css';
 
