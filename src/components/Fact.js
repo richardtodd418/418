@@ -9,7 +9,8 @@ class fact extends Component {
     const fact = await (await fetch(
       'https://cors-anywhere.herokuapp.com/https://uselessfacts.jsph.pl//random.json?language=en'
     )).json();
-    const factText = fact.text;
+    var regex = /`/gi;
+    const factText = fact.text.replace(regex, '\'');
     this.setState(() => ({fact: factText}));
   };
 
