@@ -4,7 +4,7 @@ import tsswag from '../data/tsswag';
 class fact extends Component {
   state = {
     fact: 'Fact incoming....',
-    interval: 60000,
+    interval: 600000,
   };
 
   getFact = async () => {
