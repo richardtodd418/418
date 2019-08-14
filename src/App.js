@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Fact from './components/Fact';
+import Footer from './components/Footer';
 import logo1 from './teapot-1.svg';
 
 
@@ -13,6 +14,7 @@ class App extends Component {
           <img src={logo1} className="App-logo" alt="logo" />
         </header>
         <Fact />
+        <Footer />
       </div>
     );
   }
