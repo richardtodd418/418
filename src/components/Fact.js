@@ -28,7 +28,7 @@ class fact extends Component {
 
   componentDidMount() {
     this.getFact();
-    const interval = setInterval(this.getFact, 12000);
+    const interval = setInterval(this.getFact, 600000);
   }
 
   render() {
