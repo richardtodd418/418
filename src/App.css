@@ -1,10 +1,14 @@
+:root {
+  --main-bg-color: #e88131;
+  --main-bg-color: #0abab5;
+}
+
 .App {
   text-align: center;
-  background-color: #0abab5;
+  background-color: var(--main-bg-color);
   display: grid;
   grid-template-rows: 200px 1fr 100px;
   min-height: 100vh;
-
 }
 
 .App-logo {
@@ -23,7 +27,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--main-bg-color);
 }
 
 .fact-text {
@@ -35,8 +39,23 @@
   font-size: 1.5em;
 }
 
-.footer-disclaimer {
-  color :#0abab5;
-  filter: brightness(80%);
+.psl-timer__wrapper {
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 0 10% 15%;
+  font-size: 1.5em;
 }
 
+.psl-timer__wrapper img {
+  margin: 0 auto;
+}
+
+.psl-timer {
+  min-width: 300px;
+}
+.footer-disclaimer {
+  color: #0abab5;
+  filter: brightness(80%);
+}
