@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #e88131;
-  --main-bg-color: #0abab5;
+  --main-bg-color: #a0bab5;
 }
 
 .App {
@@ -37,6 +37,10 @@
   align-content: center;
   margin: 0 10% 15%;
   font-size: 1.5em;
+}
+
+.fact-text > h2 {
+  word-break: break-all;
 }
 
 .psl-timer__wrapper {
