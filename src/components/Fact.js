@@ -34,9 +34,9 @@ class fact extends Component {
 
   render() {
     return (
-      <div className="fact-text">
-        <h1>{this.state.fact}</h1>
-      </div>
+      <main className="fact-text">
+        <h2>{this.state.fact}</h2>
+      </main>
     );
   }
 }
