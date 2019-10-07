@@ -8,6 +8,10 @@ class fact extends Component {
   };
 
   getFact = async () => {
+    // const factURL = 'https://uselessfacts.jsph.pl//random.json?language=en'; 
+    // const factKey = 'text';
+    const factURL = 'https://catfact.ninja/fact'; 
+    const factKey = 'fact';
     const number = Math.random();
     const threshold = 1;
     if (number > threshold) {
@@ -19,10 +23,10 @@ class fact extends Component {
     } else {
       // get fact
       const fact = await (await fetch(
-        'https://cors-anywhere.herokuapp.com/https://uselessfacts.jsph.pl//random.json?language=en'
+        `https://cors-anywhere.herokuapp.com/${factURL}`
       )).json();
       var regex = /`/gi;
-      const factText = fact.text.replace(regex, "'");
+      const factText = fact[factKey].replace(regex, "'");
       this.setState(() => ({fact: factText}));
     }
   };
