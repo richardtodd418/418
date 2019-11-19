@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <p className="footer-disclaimer">Facts have not been verified for accuracy or screened for content. Hi Rob and Matt👋</p>
+        <p className="footer-disclaimer">Facts have not been verified for accuracy or screened for content. Hi Rob 🍜 and Matt 🍪 👋</p>
       </div>
     );
   }
