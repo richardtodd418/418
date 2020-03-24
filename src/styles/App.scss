@@ -1,0 +1,132 @@
+:root {
+  --main-bg-color: #e88131;
+  --main-bg-color: #a0bab5;
+}
+
+.App {
+  background-color: var(--main-bg-color);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.App-inner {
+  background-color: var(--main-bg-color);
+  display: grid;
+  grid-template-rows: 200px 1fr 100px;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  max-width: 1050px;
+  width: 90%;
+  padding: 0 5%;
+  margin: 0 auto;
+}
+
+.App-logo {
+  height: 100px;
+  pointer-events: none;
+}
+
+.App-header {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  justify-content: stretch;
+  font-size: calc(10px + 2vmin);
+  padding-top: 15px;
+}
+
+.App-link {
+  color: var(--main-bg-color);
+}
+
+.quiz-wrapper {
+  justify-content: center;
+  align-content: center;
+  margin: 0 5% 15%;
+  font-size: 1.2em;
+}
+
+.round-wrapper {
+  details {
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin-top: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+    
+  }
+
+  summary {
+    font-weight: bold;
+    padding: 20px 10px;
+    position: relative;
+  }
+  summary::-webkit-details-marker { 
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    font-size: 1.4rem;
+  }
+  
+  .questions {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .question--instructions {
+    list-style: none;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    
+    .reveal {
+      
+      grid-area: 1/2/2/3;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      background-color: #eee;
+      &:hover {
+        background-color: darken(#eee, 5%);
+      }
+    }
+  }
+  .question-wrapper {
+    font-size: 1rem;
+    border-bottom: 1px solid grey;
+    list-style: none;
+    padding: 0 10px;
+    
+    &:first-child {
+      border-top: 1px solid grey;
+    }
+
+    p {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+    .question {
+      border-right: 1px solid grey;
+    }
+
+    .answer {
+      padding-left: 50px;
+      
+      &.spoiler {
+        filter: blur(5px);
+      }
+    }
+  }
+}
+
+
+.footer-disclaimer {
+  color: #0abab5;
+  filter: brightness(80%);
+}
