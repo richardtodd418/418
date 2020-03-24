@@ -8,6 +8,8 @@ class fact extends Component {
   };
 
   getFact = async () => {
+    // const factURL = 'https://uselessfacts.jsph.pl//random.json?language=en'; 
+    // const factKey = 'text';
     const factURL = 'https://catfact.ninja/fact'; 
     const factKey = 'fact';
     const number = Math.random();
