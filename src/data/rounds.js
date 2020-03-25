@@ -1,5 +1,35 @@
 const blankRound = [
   {
+    title: 'Sleuth Creators',
+    date: '2020/03/25',
+    deadline: '2020/03/26 - 20:00',
+    show_answers: false,
+    questions: [
+      { question: 'Morse', answer: '' },
+      { question: 'Frost', answer: '' },
+      { question: 'Wexford', answer: '' },
+      { question: 'Poirot', answer: '' },
+      { question: 'Foyle', answer: '' },
+      { question: 'Colombo', answer: '' },
+      { question: 'Inspector Rebus', answer: '' },
+      { question: 'Maigret', answer: '' },
+      { question: 'Harry Hole', answer: '' },
+      { question: 'Sherlock HolmesBrother Cadfel', answer: '' },
+      { question: 'Miss Marple', answer: '' },
+      { question: 'Philip Marlowe', answer: '' },
+      { question: 'Lord Peter Wimsey', answer: '' },
+      { question: 'Jack Reacher', answer: '' },
+      { question: 'Perry Mason', answer: '' },
+      { question: 'Hieronymus “Harry” Bosch', answer: '' },
+      { question: 'Dick Tracy', answer: '' },
+      { question: 'Seeley Booth (Bones)', answer: '' },
+      { question: 'Adam Dalgleish', answer: '' },
+    ],
+  },
+];
+
+const rounds = [
+  {
     title: '',
     date: '',
     deadline: '',
@@ -27,9 +57,6 @@ const blankRound = [
       { question: '', answer: '' },
     ],
   },
-]
-
-const rounds = [
   {
     title: '2. Initial Numbers',
     date: '2020/03/24',
