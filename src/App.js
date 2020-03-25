@@ -1,11 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import Quiz from './components/Quiz';
 import Footer from './components/Footer';
+import Leaderboard from './components/Leaderboard';
 import logo1 from './bucket.png';
 import './styles/App.scss';
 
 const App = () => {
+  
   return (
     <Router>
       <div className="App">
@@ -13,23 +15,23 @@ const App = () => {
           <header className="App-header">
             <img src={logo1} className="App-logo" alt="logo" />
             <nav>
-              <h1>Flange & Bucket</h1>
+              <h1 className="header--title h3">Flange & Bucket</h1>
               <ul>
                 <li>
-                  <Link to="/">Questions</Link>
+                  <NavLink exact to="/">Questions</NavLink>
                 </li>
                 <li>
-                  <Link to="/leaderboard">Leaderboard</Link>
+                  <NavLink to="/leaderboard">Leaderboard</NavLink>
                 </li>
               </ul>
             </nav>
           </header>
           <Switch>
             <Route path="/leaderboard">
-              <Dave />
+              <Placeholder />
             </Route>
             <Route path="/">
-              <Home />
+              <Quiz />
             </Route>
           </Switch>
         </div>
@@ -39,12 +41,13 @@ const App = () => {
   );
 };
 
-const Home = () => {
-  return <Quiz />;
-};
 
-const Dave = () => {
-  return <div>Nothing to see here yet...</div>;
+const Placeholder = () => {
+  return (
+    <div>
+      Coming soon...
+    </div>
+  );
 };
 
 export default App;

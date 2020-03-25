@@ -1,40 +1,61 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import moment from 'moment';
 
 const Round = props => {
+  const [revealed, updateRevealed] = useState(false);
   const { round } = props;
-  console.log(props.key);
+
+  const handleReveal = () => updateRevealed(!revealed);
+
   return (
     <div className="round-wrapper">
-      <details open={props.index === 0 ? 'true' : ''}>
+      <details open={props.index === 0 ? true : ''}>
         <summary>
-          <span>{round.title}</span>
-          {' - '}
-          <span>{round.date}</span>
-          {' - '}
-          <span>{moment(round.deadline).format('YYYY/DD/MM - hh:mm')}</span>
+          <span className="summary--title">{round.title}</span>
+          <br />
+          <br />
+          <span className="summary--info">Start: {round.date}</span>
+          <br />
+          <span className="summary--info">
+            End: {moment(round.deadline).format('YYYY/MM/DD - HH:mm')}
+          </span>
         </summary>
         <ul className="questions">
-          {round.show_answers ? (
-            <li className="question--instructions">
-              <button className="reveal">Reveal answers</button>
-            </li>
-          ) : (
-            ''
-          )}
+          <li className="question-wrapper">
+            <p>
+              <span className="question question--header">Questions</span>
+              <span className="answer answer--header">
+                Answers{' '}
+                {round.show_answers ? (
+                  <button
+                    className="reveal Polaris-Button"
+                    onClick={handleReveal}
+                  >
+                    {revealed ? 'Hide' : 'Reveal'}
+                  </button>
+                ) : (
+                  ''
+                )}
+              </span>
+            </p>
+          </li>
           {round.questions.map((question, index) => (
-            <li className="question-wrapper">
+            <li key={index} className="question-wrapper">
               <p>
                 <span className="question">
                   {index + 1}. {question.question}
                 </span>
                 <span
                   className={
-                    question.answer.length === 0 || round.show_answers === false ? 'answer' : 'answer spoiler'
+                    question.answer.length === 0 ||
+                    (round.show_answers === true && revealed === true)
+                      ? 'answer'
+                      : 'answer spoiler'
                   }
                 >
                   <em>
-                    {question.answer.length === 0 || round.show_answers === false
+                    {question.answer.length === 0 ||
+                    round.show_answers === false
                       ? 'Coming soon...'
                       : question.answer}
                   </em>
