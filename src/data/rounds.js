@@ -33,7 +33,7 @@ const rounds = [
   {
     title: 'Sleuth Creators',
     date: '2020/03/25',
-    deadline: '2020/03/26 - 20:00',
+    deadline: '2020/03/26 20:00',
     show_answers: false,
     questions: [
       { question: 'Morse', answer: '' },
