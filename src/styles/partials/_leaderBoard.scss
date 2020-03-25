@@ -1,9 +1,18 @@
-.scores--row {
+.leaderboard {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  width: 100%;
+  grid-template-columns: auto repeat(11, 1fr);
+  margin-top: 15px;
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  border-radius: 2px;
   
-  li {
-    list-style: none;
+  span {
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 7px;
   }
+}
+
+.leaderboard--header {
+  font-weight: bold;
 }

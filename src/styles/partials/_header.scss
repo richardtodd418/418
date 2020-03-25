@@ -1,0 +1,52 @@
+.App-logo {
+  height: 80px;
+  pointer-events: none;
+}
+
+.App-header {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  justify-content: stretch;
+  padding-top: 15px;
+  grid-template-columns: auto 1fr;
+
+  nav {
+    justify-self: stretch;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-content: end;
+    align-self: stretch;
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto auto;
+      margin: 0;
+      justify-content: end;
+      align-content: end;
+      grid-gap: 10px;
+
+      li > a {
+        text-decoration: none;
+        font-size: 1.7rem;
+        color: black;
+
+        &.active {
+          font-weight: bold;
+          border-bottom: 2px solid black;
+        }
+
+        &:hover {
+          color: lighten(black, 45%);
+          border-bottom-color: lighten(black, 45%);
+        }
+      }
+    }
+  }
+
+  .header--title {
+    text-align: center;
+    padding-right: 80px;
+  }
+}

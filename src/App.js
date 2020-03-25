@@ -28,7 +28,7 @@ const App = () => {
           </header>
           <Switch>
             <Route path="/leaderboard">
-              <Placeholder />
+              <Leaderboard />
             </Route>
             <Route path="/">
               <Quiz />
