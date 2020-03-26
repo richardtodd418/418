@@ -41,13 +41,4 @@ const App = () => {
   );
 };
 
-
-const Placeholder = () => {
-  return (
-    <div>
-      Coming soon...
-    </div>
-  );
-};
-
 export default App;

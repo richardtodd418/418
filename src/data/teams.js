@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const teamTemplate = {
   name: '',
   members: '',
