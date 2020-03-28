@@ -54,7 +54,10 @@ const RoundInner = props => {
                   {question.answer.length === 0 ||
                   round.show_answers === false ? (
                     <>
-                      <label hidden htmlFor={`answer--${index + 1}`} >{`answer--${index + 1}`}</label>
+                      <label
+                        hidden
+                        htmlFor={`answer--${index + 1}`}
+                      >{`answer--${index + 1}`}</label>
                       <input
                         className="Polaris-TextField__Input Polaris-TextField__Input--answer"
                         id={`answer--${index + 1}`}
@@ -82,7 +85,7 @@ const Round = props => {
   const { round } = props;
   const { questions } = round;
   const answersArray = [...questions];
-  answersArray.push({team: ''});
+
   const [answers, updateAnswers] = useState(answersArray);
 
   const handleReveal = () => updateRevealed(!revealed);
@@ -93,19 +96,35 @@ const Round = props => {
     stateCopy[answerIndex].answer = e.target.value;
     updateAnswers(stateCopy);
   };
-  
+
   const handleSubmit = e => {
-    
-    const encode = (data) => {
+    const team = e.target.querySelector('.answer-form__team').value;
+    const encode = data => {
       return Object.keys(data)
-          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-          .join("&");
+        .map(
+          key =>
+            encodeURIComponent(key.question) +
+            '=' +
+            encodeURIComponent(data[key.question])
+        )
+        .join('&');
     };
-    
+    const answersObj = {};
+    const answersForPost = answersArray
+      .map((answer, index) => ({
+        [index + 1]: `${answer.question}: ${answer.answer}`,
+      }))
+      
+    answersForPost.push(`Team: ${team}`);
+    answersForPost.forEach((answer) => {
+      answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
+    })
+    console.log(answersObj);
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'Answers', answersArray }),
+      body: encode({ 'form-name': 'Answers', answersObj }),
     })
       .then(() => console.log('Success!'))
       .catch(error => console.log(error));
@@ -136,7 +155,7 @@ const Round = props => {
               </p>
               <input
                 required
-                className="Polaris-TextField__Input"
+                className="Polaris-TextField__Input answer-form__team"
                 placeholder="Team name"
                 name="Team name"
                 type="text"
