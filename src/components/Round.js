@@ -93,14 +93,22 @@ const Round = props => {
     stateCopy[answerIndex].answer = e.target.value;
     updateAnswers(stateCopy);
   };
+  
   const handleSubmit = e => {
+    
+    const encode = (data) => {
+      return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+    };
+    
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: JSON.stringify({ 'form-name': 'Answers', answersArray }),
+      body: encode({ 'form-name': 'Answers', answersArray }),
     })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error));
+      .then(() => console.log('Success!'))
+      .catch(error => console.log(error));
 
     e.preventDefault();
   };
@@ -112,7 +120,6 @@ const Round = props => {
           name="Answers"
           data-netlify="true"
           method="POST"
-          netlify="true"
           onSubmit={handleSubmit}
         >
           <details open={props.index === 0 ? true : ''}>
