@@ -140,6 +140,7 @@ const Round = props => {
           data-netlify="true"
           method="POST"
           onSubmit={handleSubmit}
+          netlify="true"
         >
           <details open={props.index === 0 ? true : ''}>
             <RoundInner
