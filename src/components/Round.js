@@ -110,16 +110,14 @@ const Round = props => {
         .join('&');
     };
     const answersObj = {};
-    const answersForPost = answersArray
-      .map((answer, index) => ({
-        [index + 1]: `${answer.question}: ${answer.answer}`,
-      }))
-      
-    answersForPost.push(`Team: ${team}`);
-    answersForPost.forEach((answer) => {
+    const answersForPost = answersArray.map((answer, index) => ({
+      [index + 1]: `${answer.question}: ${answer.answer}`,
+    }));
+
+    answersForPost.forEach(answer => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
-    })
-    console.log(answersObj);
+    });
+    answersObj.team = team;
 
     fetch('/', {
       method: 'POST',
@@ -154,7 +152,9 @@ const Round = props => {
               <p className="answer-form__submit--header Polaris-Heading">
                 Submit your answers
               </p>
-              <label hidden htmlFor="team-name">Team name</label>
+              <label hidden htmlFor="team-name">
+                Team name
+              </label>
               <input
                 required
                 className="Polaris-TextField__Input answer-form__team"
