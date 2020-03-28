@@ -124,7 +124,7 @@ const Round = props => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'Answers', answersObj }),
+      body: encode({ 'form-name': 'Answers', ...answersObj }),
     })
       .then(() => console.log('Success!'))
       .catch(error => console.log(error));
