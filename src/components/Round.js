@@ -91,7 +91,7 @@ const Round = props => {
   return (
     <div className="round-wrapper">
       {round.form ? (
-        <form name={`Answers: ${round.title}`} data-netlify="true" method="POST">
+        <form name={`Answers: ${round.title}`} data-netlify="true" method="POST" netlify>
           <details open={props.index === 0 ? true : ''}>
             <RoundInner
               index={props.index}
