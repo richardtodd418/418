@@ -54,7 +54,7 @@ const RoundInner = props => {
                   {question.answer.length === 0 ||
                   round.show_answers === false ? (
                     <>
-                      <label htmlFor={`answer--${index + 1}`} />
+                      <label hidden htmlFor={`answer--${index + 1}`} >{`answer--${index + 1}`}</label>
                       <input
                         className="Polaris-TextField__Input Polaris-TextField__Input--answer"
                         id={`answer--${index + 1}`}
