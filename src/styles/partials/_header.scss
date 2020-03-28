@@ -1,6 +1,10 @@
 .App-logo {
   height: 80px;
   pointer-events: none;
+  
+  @include media-query($small){
+    height: 45px;
+  }
 }
 
 .App-header {
@@ -41,6 +45,10 @@
           color: lighten(black, 45%);
           border-bottom-color: lighten(black, 45%);
         }
+        
+        @include media-query($small){
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -48,5 +56,11 @@
   .header--title {
     text-align: center;
     padding-right: 80px;
+    
+    @include media-query($small){
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
   }
 }
