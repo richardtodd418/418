@@ -124,7 +124,7 @@ const Round = props => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'Answers' }),
+      body: encode({ 'form-name': 'Answers', ...answersObj }),
     })
       .then(() => console.log('Success!'))
       .catch(error => console.log(error));
@@ -154,11 +154,13 @@ const Round = props => {
               <p className="answer-form__submit--header Polaris-Heading">
                 Submit your answers
               </p>
+              <label hidden htmlFor="team-name">Team name</label>
               <input
                 required
                 className="Polaris-TextField__Input answer-form__team"
                 placeholder="Team name"
                 name="Team name"
+                id="team-name"
                 type="text"
               />
               <button type="submit" className="reveal Polaris-Button">

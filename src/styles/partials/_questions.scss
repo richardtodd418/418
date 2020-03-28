@@ -133,10 +133,31 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
     padding: 5px;
+    
+    button {
+      font-size: 1.4rem
+    }
+    
+    @include media-query($small) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr;
+      
+      input, button {
+        justify-self: center;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
   }
 
   .answer-form__submit--header {
     grid-area: 1/1/2/3;
     justify-self: center;
+    
+    @include media-query($small) {
+      grid-area: unset;
+      display: none;
+    }
   }
 }
