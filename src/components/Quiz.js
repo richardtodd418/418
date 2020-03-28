@@ -8,7 +8,7 @@ const Quiz = () => {
   return (
     <div className="quiz-wrapper">
       {quizRounds.map((round, index) => (
-        <Round key={index} round={round} index={index}/>
+        <Round key={`Round--${index}`} round={round} index={index}/>
       ))}
     </div>
   );

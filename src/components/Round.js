@@ -1,24 +1,9 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 
-const AnswerInput = props => {
-  const { question, index } = props;
-  return (
-    <>
-      <label for={`answer--${index + 1}`} />
-      <input
-        className="Polaris-TextField__Input Polaris-TextField__Input--answer"
-        id={`answer--${index + 1}`}
-        name={`${index + 1}. ${question.question}`}
-        type="text"
-        placeholder="Answer here"
-      />
-    </>
-  );
-};
-
 const RoundInner = props => {
-  const { round, handleReveal, revealed } = props;
+  const { round, handleReveal, revealed, handleChange } = props;
+
   return (
     <>
       <summary>
@@ -58,7 +43,7 @@ const RoundInner = props => {
               </span>
               <span
                 className={
-                  question.answer.length === 0
+                  question.answer.length === 0 || round.form
                     ? 'answer--input'
                     : round.show_answers === true && revealed === true
                     ? 'answer'
@@ -68,7 +53,17 @@ const RoundInner = props => {
                 <em>
                   {question.answer.length === 0 ||
                   round.show_answers === false ? (
-                    <AnswerInput question={question} index={index} />
+                    <>
+                      <label htmlFor={`answer--${index + 1}`} />
+                      <input
+                        className="Polaris-TextField__Input Polaris-TextField__Input--answer"
+                        id={`answer--${index + 1}`}
+                        name={`answer--${index + 1}`}
+                        type="text"
+                        placeholder="Answer here"
+                        onChange={handleChange}
+                      />
+                    </>
                   ) : (
                     question.answer
                   )}
@@ -85,19 +80,47 @@ const RoundInner = props => {
 const Round = props => {
   const [revealed, updateRevealed] = useState(false);
   const { round } = props;
+  const { questions } = round;
+  const [answers, updateAnswers] = useState(questions);
 
   const handleReveal = () => updateRevealed(!revealed);
+
+  const handleChange = e => {
+    const answerIndex = e.target.name.split('--')[1] - 1;
+    const stateCopy = [...answers];
+    stateCopy[answerIndex].answer = e.target.value;
+    updateAnswers(stateCopy);
+  };
+  const handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: JSON.stringify({ 'form-name': 'Answers', questions }),
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
 
   return (
     <div className="round-wrapper">
       {round.form ? (
-        <form name={`Answers: 5`} data-netlify="true" method="POST" netlify>
+        <form
+          name="Answers"
+          // data-netlify="true"
+          method="POST"
+          // netlify="true"
+          onSubmit={handleSubmit}
+        >
           <details open={props.index === 0 ? true : ''}>
             <RoundInner
               index={props.index}
               round={round}
               revealed={revealed}
               handleReveal={handleReveal}
+              answers={answers}
+              handleChange={handleChange}
             />
             <span className="answer-form__submit--wrapper">
               <p className="answer-form__submit--header Polaris-Heading">
@@ -110,7 +133,9 @@ const Round = props => {
                 name="Team name"
                 type="text"
               />
-              <button type="submit" className="reveal Polaris-Button">Submit answers</button>
+              <button type="submit" className="reveal Polaris-Button">
+                Submit answers
+              </button>
             </span>
           </details>
         </form>
