@@ -21,13 +21,14 @@ const RoundInner = props => {
           <p>
             <span className="question question--header">Questions</span>
             <span className="answer answer--header">
-              Answers{' '}
+              <span>Answers </span>
               {round.show_answers ? (
                 <button
                   className="reveal Polaris-Button"
                   onClick={handleReveal}
                 >
-                  {revealed ? 'Hide' : 'Reveal'}
+                  {revealed ? 'Hide' : 'Show'}
+                  <span className="reveal--mobile">&nbsp;answers</span>
                 </button>
               ) : (
                 ''
@@ -102,34 +103,28 @@ const Round = props => {
     const encode = data => {
       return Object.keys(data)
         .map(
-          key =>
-            encodeURIComponent(key) +
-            '=' +
-            encodeURIComponent(data[key])
+          key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
         )
         .join('&');
     };
-    
-    
-    
+
     const answersObj = {};
     const answersForPost = answersArray.map((answer, index) => ({
       [index + 1]: `${answer.question}: ${answer.answer}`,
     }));
-    
+
     answersForPost.forEach(answer => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
     answersObj.team = team;
-    
-    console.log(encode({ 'form-name': 'Answers', ...answersObj }))
-    // fetch('/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   body: encode({ 'form-name': 'Answers', ...answersObj }),
-    // })
-    //   .then(() => console.log('Success!'))
-    //   .catch(error => console.log(error));
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'Answers', ...answersObj }),
+    })
+      .then(() => console.log('Success!'))
+      .catch(error => console.log(error));
 
     e.preventDefault();
   };
