@@ -110,9 +110,9 @@ const Round = props => {
       {round.form ? (
         <form
           name="Answers"
-          // data-netlify="true"
+          data-netlify="true"
           method="POST"
-          // netlify="true"
+          netlify="true"
           onSubmit={handleSubmit}
         >
           <details open={props.index === 0 ? true : ''}>
