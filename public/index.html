@@ -16,6 +16,15 @@
   <body>
     <!-- A little help for the Netlify bots if you're not using a SSG -->
     <form name="Answers" netlify netlify-honeypot="bot-field" hidden>
+      <label hidden for="team">Team name</label>
+      <input
+        required
+        class="Polaris-TextField__Input answer-form__team"
+        placeholder="Team name"
+        name="team"
+        type="text"
+        id="team"
+      />
       <label hidden for="1">1</label>
       <input
         class="Polaris-TextField__Input Polaris-TextField__Input--answer"
@@ -175,15 +184,6 @@
         name="20"
         type="text"
         placeholder="Answer here"
-      />
-      <label hidden for="team">Team name</label>
-      <input
-        required
-        class="Polaris-TextField__Input answer-form__team"
-        placeholder="Team name"
-        name="team"
-        type="text"
-        id="team"
       />
     </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
