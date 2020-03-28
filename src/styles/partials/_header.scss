@@ -1,8 +1,9 @@
 .App-logo {
-  height: 80px;
+  height: 90px;
   pointer-events: none;
-  
-  @include media-query($small){
+  padding-bottom: 15px;
+
+  @include media-query($small) {
     height: 60px;
   }
 }
@@ -12,9 +13,13 @@
   align-items: start;
   justify-items: start;
   justify-content: stretch;
-  padding-top: 15px;
   grid-template-columns: auto 1fr;
+  padding: 15px 10% 0;
+  background-color: white;
 
+  @include media-query($small) {
+    padding: 15px 5% 0;
+  }
   nav {
     justify-self: stretch;
     display: grid;
@@ -30,32 +35,36 @@
       justify-content: end;
       align-content: end;
       grid-gap: 10px;
-      
-      @include media-query($small){
+
+      @include media-query($small) {
         justify-content: center;
-        padding-left:0;
-        margin-bottom: 10px;
+        padding-left: 0;
+      }
+
+      li {
+        padding-bottom: 15px;
       }
 
       li > a {
         text-decoration: none;
         font-size: 1.7rem;
         color: black;
+        padding-bottom: 15px;
+        margin: 0 15px;
 
         &.active {
           font-weight: bold;
-          border-bottom: 2px solid black;
+          border-bottom: 2px solid #5c6ac4;
         }
 
         &:hover {
           color: lighten(black, 45%);
           border-bottom-color: lighten(black, 45%);
         }
-        
-        @include media-query($small){
-          font-size: 1.4rem;
-          margin-right:40px;
-        
+
+        @include media-query($small) {
+          font-size: 1.5rem;
+          margin-right: 40px;
         }
       }
     }
@@ -64,11 +73,12 @@
   .header--title {
     text-align: center;
     padding-right: 80px;
-    
-    @include media-query($small){
-      font-size: 1.7rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+
+    @include media-query($small) {
+      padding-right: 40px;
       margin-bottom: 20px;
-      font-weight: bold;
     }
   }
 }

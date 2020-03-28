@@ -6,7 +6,8 @@
   -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
+  border-radius: 1px;
+  
   details {
     border-radius: 2px;
     margin-top: 15px;
@@ -28,7 +29,7 @@
       font-size: 1.4rem;
 
       @include media-query($small) {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
     }
   }
@@ -47,7 +48,6 @@
   }
 
   .reveal {
-
     @include media-query($small) {
       margin-bottom: 0;
       margin-top: 10px;
@@ -62,8 +62,6 @@
     }
   }
 
-
-  
   .question--header {
     font-weight: bold;
     display: grid;
@@ -101,10 +99,22 @@
   }
 
   .question-wrapper {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     border-bottom: 1px solid grey;
     list-style: none;
     padding: 5px 10px;
+
+    @include media-query($small) {
+      font-size: 1.7rem;
+
+      &.question-wrapper--0 {
+        padding-top: 0;
+
+        .question {
+          padding-top: 5px;
+        }
+      }
+    }
 
     &:first-child {
       border-top: 1px solid grey;
@@ -121,9 +131,12 @@
     }
     .question {
       border-right: 1px solid grey;
+      padding-right: 20px;
+      padding-top: 10px;
 
       @include media-query($small) {
         border-right: none;
+        padding-right: none;
       }
     }
 
@@ -140,7 +153,6 @@
       }
 
       @include media-query($small) {
-        padding-left: 0;
         margin: 7px 0;
       }
     }
@@ -149,17 +161,20 @@
       padding: 0;
 
       .Polaris-TextField__Input--answer {
+        font-size: 1.6rem;
+
         @include media-query($small) {
           margin: 10px 0;
+          padding: 13px 0;
         }
       }
     }
   }
-  
+
   .question-wrapper--header {
-    @include media-query($small){
+    @include media-query($small) {
       border-bottom: none;
-      
+
       .answer--header {
         margin: 0;
       }
@@ -178,11 +193,14 @@
 
       input,
       button {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         justify-self: center;
         text-align: center;
         margin-bottom: 10px;
         margin-top: 10px;
+      }
+      .answer-form__team {
+        font-size: 1.8rem;
       }
     }
   }
@@ -196,8 +214,4 @@
       display: none;
     }
   }
-}
-
-button {
-  font-size: 1.4rem;
 }

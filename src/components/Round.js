@@ -36,47 +36,50 @@ const RoundInner = props => {
             </span>
           </p>
         </li>
-        {round.questions.map((question, index) => (
-          <li key={index} className="question-wrapper">
-            <p>
-              <span className="question">
-                {index + 1}. {question.question}
-              </span>
-              <span
-                className={
-                  question.answer.length === 0 || round.form
-                    ? 'answer--input'
-                    : round.show_answers === true && revealed === true
-                    ? 'answer'
-                    : 'answer spoiler'
-                }
-              >
-                <em>
-                  {question.answer.length === 0 ||
-                  round.show_answers === false ? (
-                    <>
-                      <label
-                        hidden
-                        htmlFor={`answer--${index + 1}`}
-                      >{`answer--${index + 1}`}</label>
-                      <input
-                        className="Polaris-TextField__Input Polaris-TextField__Input--answer"
-                        id={`answer--${index + 1}`}
-                        name={`answer--${index + 1}`}
-                        type="text"
-                        placeholder="Answer here"
-                        onChange={handleChange}
-                        value={answers[index].answer}
-                      />
-                    </>
-                  ) : (
-                    question.answer
-                  )}
-                </em>
-              </span>
-            </p>
-          </li>
-        ))}
+        {round.questions.map((question, index) => {
+          return (
+            <li key={index} className={`question-wrapper question-wrapper--${index}`}>
+              <p>
+                <span className="question">
+                  {index + 1}. {question.question}
+                </span>
+                <span
+                  className={
+                    question.answer.length === 0 || round.form
+                      ? 'answer--input'
+                      : round.show_answers === true && revealed === true
+                      ? 'answer'
+                      : 'answer spoiler'
+                  }
+                >
+                  <em>
+                    {question.answer.length === 0 ||
+                    round.show_answers === false ||
+                    round.publish_answers === false ? (
+                      <>
+                        <label
+                          hidden
+                          htmlFor={`answer--${index + 1}`}
+                        >{`answer--${index + 1}`}</label>
+                        <input
+                          className="Polaris-TextField__Input Polaris-TextField__Input--answer"
+                          id={`answer--${index + 1}`}
+                          name={`answer--${index + 1}`}
+                          type="text"
+                          placeholder="Answer here"
+                          onChange={handleChange}
+                          value={answers[index].answer}
+                        />
+                      </>
+                    ) : (
+                      question.answer
+                    )}
+                  </em>
+                </span>
+              </p>
+            </li>
+          );
+        })}
       </ul>
     </>
   );
@@ -88,6 +91,10 @@ const Round = props => {
   const { round, toggleActive } = props;
   const { questions } = round;
   const answersArray = [...questions];
+  console.log(answersArray);
+  if(!round.publish_answers) {
+    answersArray.forEach(answer => answer.answer = '');
+  }
   const [answers, updateAnswers] = useState(answersArray);
   const [localStorageLoaded, updateLocalStorageLoaded] = useState(false);
 
@@ -103,11 +110,11 @@ const Round = props => {
   }, []);
   const handleReveal = () => updateRevealed(!revealed);
 
-  const handleChange = e => {
-    localStorage.setItem('questionState', JSON.stringify(answers));
+  const handleChange = async e => {
     const answerIndex = e.target.name.split('--')[1] - 1;
     const stateCopy = [...answers];
     stateCopy[answerIndex].answer = e.target.value;
+    localStorage.setItem('questionState', JSON.stringify(stateCopy));
     updateAnswers(stateCopy);
   };
 
@@ -151,7 +158,10 @@ const Round = props => {
         console.log('Success!');
         toggleActive();
         clearLocal();
-        const resetAnswers = answers.map(answer => ({question: answer.question, answer: ''}))
+        const resetAnswers = answers.map(answer => ({
+          question: answer.question,
+          answer: '',
+        }));
         updateAnswers(resetAnswers);
         updateTeam('');
       })

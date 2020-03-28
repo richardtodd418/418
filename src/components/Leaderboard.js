@@ -1,27 +1,28 @@
 import React from 'react';
-import teams from '../data/teams';
 
-const sortTeams = list => {
-  const reordered = list.sort((a,b) => {
-    const scoresA  = a.scores;
-    const scoresB = b.scores;
-    
-    let initA = 0;
-    const totalScoreA = scoresA.reduce((a, b) => a + b.score, initA);
-    let initB = 0;
-    const totalScoreB = scoresB.reduce((a, b) => a + b.score, initB);
-    return  totalScoreB - totalScoreA;
-  });
-  return reordered;
-}
+const Leaderboard = props => {
+  const sortTeams = list => {
+    const reordered = list.sort((a, b) => {
+      const scoresA = a.scores;
+      const scoresB = b.scores;
 
-const sortedTeams = sortTeams(teams);
+      let initA = 0;
+      const totalScoreA = scoresA.reduce((a, b) => a + b.score, initA);
+      let initB = 0;
+      const totalScoreB = scoresB.reduce((a, b) => a + b.score, initB);
+      return totalScoreB - totalScoreA;
+    });
+    return reordered;
+  };
+  const { teams } = props;
+  const sortedTeams = sortTeams(teams);
 
-const Leaderboard = () => {
   return (
     <div className="leaderboard">
       <span className="leaderboard__header--rounds">Rounds</span>
-      <span className="leaderboard__header leaderboard__header--team">Team</span>
+      <span className="leaderboard__header leaderboard__header--team">
+        Team
+      </span>
       <span className="leaderboard__header">1</span>
       <span className="leaderboard__header">2</span>
       <span className="leaderboard__header">3</span>
@@ -44,7 +45,8 @@ const Leaderboard = () => {
             </span>
             {scores.map((score, index) => (
               <span key={index}>
-                {score.score}{/*`/${score.max}`*/}
+                {score.score}
+                {/*`/${score.max}`*/}
               </span>
             ))}
             <span>{totalScore}</span>

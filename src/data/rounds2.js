@@ -7,6 +7,7 @@ const blankRound = [
     show_answers: false,
     publish_answers: false,
     form: true,
+    published: false,
     questions: [
       { question: '', answer: '' },
       { question: '', answer: '' },
@@ -32,15 +33,15 @@ const blankRound = [
   },
 ];
 
-const rounds = [
+const rounds2 = [
   {
-    title: 'Chocolates',
+    title: '6. Chocolates',
     date: '2020/03/28',
     deadline: '2020/03/29 20:00',
     show_answers: false,
     publish_answers: false,
-    published: true,
     form: true,
+    published: false,
     questions: [
       { question: 'Regent or Bond? (7,6)', answer: '' },
       { question: 'Not very practical (4,4)', answer: '' },
@@ -70,8 +71,8 @@ const rounds = [
     deadline: '2020/03/27 20:00',
     show_answers: false,
     publish_answers: false,
-    published: true,
     form: true,
+    published: false,
     questions: [
       { question: 'A hand bag', answer: '' },
       { question: 'Frankly my dear I don’t give a damn!', answer: '' },
@@ -112,10 +113,10 @@ const rounds = [
     title: '4. Towns and Cities',
     date: '2020/03/26',
     deadline: '2020/03/26 20:00',
-    show_answers: true,
-    publish_answers: true,
-    published: true,
-    form: false,
+    show_answers: false,
+    publish_answers: false,
+    form: true,
+    published: false,
     questions: [
       { question: 'Tub full of water', answer: 'Bath' },
       { question: 'Professor of rollers', answer: 'Doncaster' },
@@ -146,10 +147,10 @@ const rounds = [
     title: '3. Sleuth Creators',
     date: '2020/03/25',
     deadline: '2020/03/26 20:00',
-    show_answers: true,
-    publish_answers: true,
-    published: true,
-    form: false,
+    show_answers: false,
+    publish_answers: false,
+    form: true,
+    published: false,
     questions: [
       { question: 'Morse', answer: 'Colin Dexter' },
       { question: 'Frost', answer: 'R D Wingfield' },
@@ -177,10 +178,10 @@ const rounds = [
     title: '2. Initial Numbers',
     date: '2020/03/24',
     deadline: '2020/03/25 20:00',
-    show_answers: true,
-    publish_answers: true,
-    published: true,
-    form: false,
+    show_answers: false,
+    publish_answers: false,
+    form: true,
+    published: false,
     questions: [
       { question: '1 W on a U', answer: '1 Wheel on a Unicycle' },
       { question: '3 BM', answer: '3 Blind Mice' },
@@ -215,12 +216,12 @@ const rounds = [
   },
   {
     title: '1. Musicals',
-    date: '2020/03/22',
-    deadline: '2020/03/24 - 20:00',
-    show_answers: true,
-    publish_answers: true,
+    date: '2020/03/28',
+    deadline: '2020/03/29 18:00',
+    show_answers: false,
+    publish_answers: false,
+    form: true,
     published: true,
-    form: false,
     questions: [
       { question: 'The shrew tamed? (4, 2, 4)', answer: 'Kiss me Kate' },
       {
@@ -274,4 +275,4 @@ const rounds = [
   },
 ];
 
-export default rounds;
+export default rounds2;

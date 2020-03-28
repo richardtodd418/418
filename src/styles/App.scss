@@ -26,14 +26,12 @@
   grid-template-rows: auto 1fr 100px;
   justify-content: center;
   grid-template-columns: 1fr;
-  max-width: 1050px;
-  width: 90%;
-  padding: 0 5%;
+  width: 100%;
   margin: 0 auto;
-  
-  @include media-query($small){
-    width:94%;
-    padding: 0 3%;
+
+  @include media-query($small) {
+    width: 100%;
+    padding: 0;
     margin: 0;
   }
 }
@@ -46,9 +44,19 @@
   justify-content: center;
   align-content: center;
   margin: 0 0 15%;
-  font-size: 1.2em;
-}
+  font-size: 1.4em;
+  max-width: 1050px;
+  justify-self: center;
+  width: 95%;
 
+  @include media-query($large-up) {
+    min-width: 950px;
+  }
+  
+  @include media-query($small) {
+    margin: 0 4% 15%;
+  }
+}
 
 .footer-disclaimer {
   color: #0abab5;

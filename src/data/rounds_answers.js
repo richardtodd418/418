@@ -5,7 +5,6 @@ const blankRound = [
     date: '',
     deadline: '',
     show_answers: false,
-    publish_answers: false,
     form: true,
     questions: [
       { question: '', answer: '' },
@@ -38,8 +37,6 @@ const rounds = [
     date: '2020/03/28',
     deadline: '2020/03/29 20:00',
     show_answers: false,
-    publish_answers: false,
-    published: true,
     form: true,
     questions: [
       { question: 'Regent or Bond? (7,6)', answer: '' },
@@ -69,8 +66,6 @@ const rounds = [
     date: '2020/03/27',
     deadline: '2020/03/27 20:00',
     show_answers: false,
-    publish_answers: false,
-    published: true,
     form: true,
     questions: [
       { question: 'A hand bag', answer: '' },
@@ -113,8 +108,6 @@ const rounds = [
     date: '2020/03/26',
     deadline: '2020/03/26 20:00',
     show_answers: true,
-    publish_answers: true,
-    published: true,
     form: false,
     questions: [
       { question: 'Tub full of water', answer: 'Bath' },
@@ -147,8 +140,6 @@ const rounds = [
     date: '2020/03/25',
     deadline: '2020/03/26 20:00',
     show_answers: true,
-    publish_answers: true,
-    published: true,
     form: false,
     questions: [
       { question: 'Morse', answer: 'Colin Dexter' },
@@ -178,8 +169,6 @@ const rounds = [
     date: '2020/03/24',
     deadline: '2020/03/25 20:00',
     show_answers: true,
-    publish_answers: true,
-    published: true,
     form: false,
     questions: [
       { question: '1 W on a U', answer: '1 Wheel on a Unicycle' },
@@ -218,8 +207,6 @@ const rounds = [
     date: '2020/03/22',
     deadline: '2020/03/24 - 20:00',
     show_answers: true,
-    publish_answers: true,
-    published: true,
     form: false,
     questions: [
       { question: 'The shrew tamed? (4, 2, 4)', answer: 'Kiss me Kate' },
