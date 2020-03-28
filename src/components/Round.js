@@ -81,7 +81,9 @@ const Round = props => {
   const [revealed, updateRevealed] = useState(false);
   const { round } = props;
   const { questions } = round;
-  const [answers, updateAnswers] = useState(questions);
+  const answersArray = [...questions];
+  answersArray.push({team: ''});
+  const [answers, updateAnswers] = useState(answersArray);
 
   const handleReveal = () => updateRevealed(!revealed);
 
@@ -95,7 +97,7 @@ const Round = props => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: JSON.stringify({ 'form-name': 'Answers', questions }),
+      body: JSON.stringify({ 'form-name': 'Answers', answersArray }),
     })
       .then(() => alert('Success!'))
       .catch(error => alert(error));
@@ -119,7 +121,6 @@ const Round = props => {
               round={round}
               revealed={revealed}
               handleReveal={handleReveal}
-              answers={answers}
               handleChange={handleChange}
             />
             <span className="answer-form__submit--wrapper">
