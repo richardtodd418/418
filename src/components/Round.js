@@ -17,7 +17,7 @@ const RoundInner = props => {
         </span>
       </summary>
       <ul className="questions">
-        <li className="question-wrapper">
+        <li className="question-wrapper question-wrapper--header">
           <p>
             <span className="question question--header">Questions</span>
             <span className="answer answer--header">

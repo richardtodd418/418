@@ -46,38 +46,37 @@
     margin-bottom: 0;
   }
 
-  .question--instructions {
-    list-style: none;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    justify-items: center;
+  .reveal {
 
-    .reveal {
-      grid-area: 1/2/2/3;
-      
-      .reveal--mobile {
-        display: none;
-        
-        @include media-query($small){
-          display: block;
-        }
+    @include media-query($small) {
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+
+    .reveal--mobile {
+      display: none;
+
+      @include media-query($small) {
+        display: block;
       }
     }
   }
 
+
+  
   .question--header {
     font-weight: bold;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: end;
+    padding-top: 15px;
 
     @include media-query($small) {
       grid-template-columns: 1fr;
       justify-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
+      margin-top: 0;
+      display: none;
     }
   }
 
@@ -86,13 +85,16 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
+    padding-top: 15px;
     padding-left: 0;
+    margin-bottom: 10px;
 
     @include media-query($small) {
       grid-template-rows: 1fr;
       margin-bottom: 15px;
+      padding-top: 0;
 
-      span {
+      span:not(.reveal--mobile) {
         display: none;
       }
     }
@@ -136,9 +138,10 @@
       &.answer--header {
         padding-left: 0;
       }
-      
-      @include media-query($small){
+
+      @include media-query($small) {
         padding-left: 0;
+        margin: 7px 0;
       }
     }
 
@@ -152,13 +155,22 @@
       }
     }
   }
+  
+  .question-wrapper--header {
+    @include media-query($small){
+      border-bottom: none;
+      
+      .answer--header {
+        margin: 0;
+      }
+    }
+  }
 
   .answer-form__submit--wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
     padding: 10px 15px 15px 15px;
-    
 
     @include media-query($small) {
       grid-template-columns: 1fr;
