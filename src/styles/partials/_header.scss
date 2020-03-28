@@ -3,7 +3,7 @@
   pointer-events: none;
   
   @include media-query($small){
-    height: 45px;
+    height: 60px;
   }
 }
 
@@ -30,6 +30,12 @@
       justify-content: end;
       align-content: end;
       grid-gap: 10px;
+      
+      @include media-query($small){
+        justify-content: center;
+        padding-left:0;
+        margin-bottom: 10px;
+      }
 
       li > a {
         text-decoration: none;
@@ -48,6 +54,8 @@
         
         @include media-query($small){
           font-size: 1.4rem;
+          margin-right:40px;
+        
         }
       }
     }

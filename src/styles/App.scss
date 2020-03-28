@@ -30,6 +30,12 @@
   width: 90%;
   padding: 0 5%;
   margin: 0 auto;
+  
+  @include media-query($small){
+    width:94%;
+    padding: 0 3%;
+    margin: 0;
+  }
 }
 
 .App-link {

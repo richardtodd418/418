@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
 const RoundInner = props => {
-  const { round, handleReveal, revealed, handleChange } = props;
+  const { round, handleReveal, revealed, handleChange, answers } = props;
 
   return (
     <>
@@ -66,6 +66,7 @@ const RoundInner = props => {
                         type="text"
                         placeholder="Answer here"
                         onChange={handleChange}
+                        value={answers[index].answer}
                       />
                     </>
                   ) : (
@@ -83,21 +84,43 @@ const RoundInner = props => {
 
 const Round = props => {
   const [revealed, updateRevealed] = useState(false);
-  const { round } = props;
+  const [teamValue, updateTeam] = useState('');
+  const { round, toggleActive } = props;
   const { questions } = round;
   const answersArray = [...questions];
-
   const [answers, updateAnswers] = useState(answersArray);
+  const [localStorageLoaded, updateLocalStorageLoaded] = useState(false);
 
+  useEffect(() => {
+    if (round.form && localStorageLoaded === false) {
+      const checkLocal = localStorage.getItem('questionState') !== null;
+      if (checkLocal) {
+        const localAnswers = JSON.parse(localStorage.getItem('questionState'));
+        updateAnswers(localAnswers);
+        updateLocalStorageLoaded(true);
+      }
+    }
+  }, []);
   const handleReveal = () => updateRevealed(!revealed);
 
   const handleChange = e => {
+    localStorage.setItem('questionState', JSON.stringify(answers));
     const answerIndex = e.target.name.split('--')[1] - 1;
     const stateCopy = [...answers];
     stateCopy[answerIndex].answer = e.target.value;
     updateAnswers(stateCopy);
   };
-  console.log(answersArray);
+
+  const handleTeamChange = e => {
+    updateTeam(e.target.value);
+  };
+
+  const clearLocal = () => {
+    const checkLocal = localStorage.getItem('questionState') !== null;
+    if (checkLocal) {
+      localStorage.removeItem('questionState');
+    }
+  };
 
   const handleSubmit = e => {
     const team = e.target.querySelector('.answer-form__team').value;
@@ -124,7 +147,14 @@ const Round = props => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'Answers', ...answersObj }),
     })
-      .then(() => console.log('Success!'))
+      .then(() => {
+        console.log('Success!');
+        toggleActive();
+        clearLocal();
+        const resetAnswers = answers.map(answer => ({question: answer.question, answer: ''}))
+        updateAnswers(resetAnswers);
+        updateTeam('');
+      })
       .catch(error => console.log(error));
 
     e.preventDefault();
@@ -147,6 +177,7 @@ const Round = props => {
               revealed={revealed}
               handleReveal={handleReveal}
               handleChange={handleChange}
+              answers={answers}
             />
             <span className="answer-form__submit--wrapper">
               <p className="answer-form__submit--header Polaris-Heading">
@@ -162,6 +193,8 @@ const Round = props => {
                 name="Team name"
                 id="team-name"
                 type="text"
+                value={teamValue}
+                onChange={handleTeamChange}
               />
               <button type="submit" className="reveal Polaris-Button">
                 Submit answers

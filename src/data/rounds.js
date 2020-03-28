@@ -5,6 +5,7 @@ const blankRound = [
     date: '',
     deadline: '',
     show_answers: false,
+    form: true,
     questions: [
       { question: '', answer: '' },
       { question: '', answer: '' },
@@ -31,6 +32,35 @@ const blankRound = [
 ];
 
 const rounds = [
+  {
+    title: 'Chocolates',
+    date: '2020/03/28',
+    deadline: '2020/03/29 20:00',
+    show_answers: false,
+    form: true,
+    questions: [
+      { question: 'Regent or Bond? (7,6)', answer: '' },
+      { question: 'Not very practical (4,4)', answer: '' },
+      { question: 'Birthdays, Anniversaries (12)', answer: '' },
+      { question: 'Witchcraft (5,5)', answer: '' },
+      { question: 'William Tell, V.Cs, Spiderman (6)', answer: '' },
+      { question: 'Peace, Rambling Rector, Judi Dench (5)', answer: '' },
+      { question: 'Big Bus (6,6)', answer: '' },
+      { question: 'University Challenge panellists (8)', answer: '' },
+      { question: 'It’s not Dad’s (4)', answer: '' },
+      { question: 'An off-white pub (5,3)', answer: '' },
+      { question: 'Sh! (5)', answer: '' },
+      { question: 'A feline uniform (3,3)', answer: '' },
+      { question: 'Outlaw (6)', answer: '' },
+      { question: 'Travelling musicians (9)', answer: '' },
+      { question: 'Reward for Capturing (6)', answer: '' },
+      { question: 'Whisky taunters (9)', answer: '' },
+      { question: 'Joy in Istanbul (7,7)', answer: '' },
+      { question: 'Theme (5)', answer: '' },
+      { question: 'A noisy stretch of water (5)', answer: '' },
+      { question: '10 Cents (4) or (4,3)', answer: '' },
+    ],
+  },
   {
     title: `5. Who's line is it anyway?`,
     date: '2020/03/27',
