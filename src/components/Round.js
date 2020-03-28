@@ -103,29 +103,33 @@ const Round = props => {
       return Object.keys(data)
         .map(
           key =>
-            encodeURIComponent(key.question) +
+            encodeURIComponent(key) +
             '=' +
-            encodeURIComponent(data[key.question])
+            encodeURIComponent(data[key])
         )
         .join('&');
     };
+    
+    
+    
     const answersObj = {};
     const answersForPost = answersArray.map((answer, index) => ({
       [index + 1]: `${answer.question}: ${answer.answer}`,
     }));
-
+    
     answersForPost.forEach(answer => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
     answersObj.team = team;
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'Answers', ...answersObj }),
-    })
-      .then(() => console.log('Success!'))
-      .catch(error => console.log(error));
+    
+    console.log(encode({ 'form-name': 'Answers', ...answersObj }))
+    // fetch('/', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //   body: encode({ 'form-name': 'Answers', ...answersObj }),
+    // })
+    //   .then(() => console.log('Success!'))
+    //   .catch(error => console.log(error));
 
     e.preventDefault();
   };
