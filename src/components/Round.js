@@ -97,6 +97,7 @@ const Round = props => {
     stateCopy[answerIndex].answer = e.target.value;
     updateAnswers(stateCopy);
   };
+  console.log(answersArray);
 
   const handleSubmit = e => {
     const team = e.target.querySelector('.answer-form__team').value;
@@ -116,7 +117,7 @@ const Round = props => {
     answersForPost.forEach(answer => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
-    answersObj.team = team;
+    answersObj.team = `${props.round.title} - ${team}`;
 
     fetch('/', {
       method: 'POST',
