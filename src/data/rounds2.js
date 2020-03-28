@@ -33,6 +33,8 @@ const blankRound = [
   },
 ];
 
+const publish_answers = [false, false, false, false, false, false];
+
 const rounds2 = [
   {
     title: '6. Chocolates',
@@ -223,53 +225,80 @@ const rounds2 = [
     form: true,
     published: true,
     questions: [
-      { question: 'The shrew tamed? (4, 2, 4)', answer: 'Kiss me Kate' },
+      { question: 'The shrew tamed? (4, 2, 4)', answer: '' },
       {
         question: 'Spectre in singing event? (3, 7, 2, 3, 5)',
-        answer: 'The Phantom of the Opera',
+        answer: '',
       },
       {
         question: '_____ Lennox or _____ get your gun or _____ Oakley? (5)',
-        answer: 'Annie',
+        answer: '',
       },
       {
         question:
           'Enough wives for everybody - well at least one each? (5, 6, 3, 5, 8)',
-        answer: 'Seven Brides for Seven Brothers',
+        answer: '',
       },
-      { question: 'East enders Flying Squad? (7, 4)', answer: 'Sweeney Todd' },
-      { question: 'Notoriety? (4)', answer: 'Fame' },
-      { question: 'World champion racing car driver? (8)', answer: 'Hamilton' },
-      { question: 'US State? (8)', answer: 'Oklahoma' },
+      {
+        question: 'East enders Flying Squad? (7, 4)',
+        answer: (() => (publish_answers[0] ? 'Sweeney Todd' : ''))(),
+      },
+      {
+        question: 'Notoriety? (4)',
+        answer: (() => (publish_answers[0] ? 'Fame' : ''))(),
+      },
+      {
+        question: 'World champion racing car driver? (8)',
+        answer: (() => (publish_answers[0] ? 'Hamilton' : ''))(),
+      },
+      {
+        question: 'US State? (8)',
+        answer: (() => (publish_answers[0] ? 'Oklahoma' : ''))(),
+      },
       {
         question: 'Royal Siamese governess makes good? (3, 4, 3, 1)',
-        answer: 'The King and I',
+        answer: (() => (publish_answers[0] ? 'The King and I' : ''))(),
       },
       {
         question: 'Did Maria bring the hills to life? (3, 5, 2, 5)',
-        answer: 'The Sound of Music',
+        answer: (() => (publish_answers[0] ? 'The Sound of Music' : ''))(),
       },
-      { question: 'Greetings child’s toy? (5, 5)', answer: 'Hello Dolly' },
-      { question: 'Threepence? (4, 1, 8)', answer: 'Half a Sixpence' },
+      {
+        question: 'Greetings child’s toy? (5, 5)',
+        answer: (() => (publish_answers[0] ? 'Hello Dolly' : ''))(),
+      },
+      {
+        question: 'Threepence? (4, 1, 8)',
+        answer: (() => (publish_answers[0] ? 'Half a Sixpence' : ''))(),
+      },
       {
         question: 'Not a tale from the orient? (4, 4, 5)',
-        answer: 'West Side Story',
+        answer: (() => (publish_answers[0] ? 'West Side Story' : ''))(),
       },
       { question: 'William Writer? (5, 6)', answer: 'Billy Elliot' },
-      { question: 'The French poor ones? (3, 10)', answer: 'Les Misérables' },
+      {
+        question: 'The French poor ones? (3, 10)',
+        answer: (() => (publish_answers[0] ? 'Les Miserables' : ''))(),
+      },
       {
         question: 'Opposite of North Atlantic? (5, 7)',
-        answer: 'South Pacific',
+        answer: (() => (publish_answers[0] ? 'South Pacific' : ''))(),
       },
       {
         question: 'Not your dark gentleman? (2, 4, 4)',
-        answer: 'My Fair Lady',
+        answer: (() => (publish_answers[0] ? 'My Fair Lady' : ''))(),
       },
-      { question: 'Mother Farrow? (5, 3)', answer: 'Mamma Mia' },
-      { question: 'Not dogs? (4)', answer: 'Cats' },
+      {
+        question: 'Mother Farrow? (5, 3)',
+        answer: (() => (publish_answers[0] ? 'Mamma Mia' : ''))(),
+      },
+      {
+        question: 'Not dogs? (4)',
+        answer: (() => (publish_answers[0] ? 'Cats' : ''))(),
+      },
       {
         question: 'Night-time features fast train? (9,7)',
-        answer: 'Starlight Express',
+        answer: (() => (publish_answers[0] ? 'Starlight Express' : ''))(),
       },
     ],
   },

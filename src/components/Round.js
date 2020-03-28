@@ -3,7 +3,6 @@ import moment from 'moment';
 
 const RoundInner = props => {
   const { round, handleReveal, revealed, handleChange, answers } = props;
-
   return (
     <>
       <summary>
@@ -54,8 +53,7 @@ const RoundInner = props => {
                 >
                   <em>
                     {question.answer.length === 0 ||
-                    round.show_answers === false ||
-                    round.publish_answers === false ? (
+                    round.show_answers === false ? (
                       <>
                         <label
                           hidden
@@ -91,10 +89,6 @@ const Round = props => {
   const { round, toggleActive } = props;
   const { questions } = round;
   const answersArray = [...questions];
-  console.log(answersArray);
-  if(!round.publish_answers) {
-    answersArray.forEach(answer => answer.answer = '');
-  }
   const [answers, updateAnswers] = useState(answersArray);
   const [localStorageLoaded, updateLocalStorageLoaded] = useState(false);
 
