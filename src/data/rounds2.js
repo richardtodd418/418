@@ -185,8 +185,8 @@ const rounds2 = [
   },
   {
     title: '2. Initial Numbers',
-    date: '2020/03/24',
-    deadline: '2020/03/25 20:00',
+    date: '2020/03/29',
+    deadline: '2020/03/30 20:00',
     show_answers: false,
     form: true,
     published: true,
