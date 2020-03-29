@@ -30,6 +30,10 @@
     padding: 7px;
   }
 
+  @include media-query($medium-down) {
+    margin: 15px 5%;
+  }
+  
   @include media-query($small) {
     font-size: 1.5rem;
     grid-template-columns: repeat(11, 1fr);

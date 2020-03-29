@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Leaderboard = props => {
+  // Team that has already completed the quiz with other players
+  const legacyTeam = 'Daryle & the Spanner';
   const sortTeams = list => {
     const reordered = list.sort((a, b) => {
       const scoresA = a.scores;
@@ -12,6 +14,9 @@ const Leaderboard = props => {
       const totalScoreB = scoresB.reduce((a, b) => a + b.score, initB);
       return totalScoreB - totalScoreA;
     });
+    const spannerIndex = reordered.findIndex(team => team.name === legacyTeam);
+    reordered.push(reordered.splice(spannerIndex, 1)[0]);
+    console.log(reordered);
     return reordered;
   };
   const { teams } = props;
@@ -40,7 +45,8 @@ const Leaderboard = props => {
         const totalScore = scores.reduce((a, b) => a + b.score, init);
         return (
           <React.Fragment key={index}>
-            <span className="leaderboard__team">
+            <span className={`leaderboard__team ${team.name === legacyTeam ? 'italic' : null }`}>
+              
               {team.name}{' '}({team.members})
             </span>
             {scores.map((score, index) => (

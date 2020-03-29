@@ -37,7 +37,7 @@ const teams2 = [
     ],
   },
   {
-    name: `George and Mildred`,
+    name: `George & Mildred`,
     members: '???',
     scores: [
       { round: 1, score: 14, max: 20 },
@@ -102,7 +102,7 @@ const teams2 = [
   },
   {
     name: `Twinafox`,
-    members: 'Rach',
+    members: 'Rach & Danny',
     scores: [
       { round: 1, score: 20, max: 20 },
       { round: 2, score: '', max: 20 },
@@ -117,7 +117,7 @@ const teams2 = [
     ],
   },
   {
-    name: `Bex and Pete out of Bex and Pete`,
+    name: `Bex & Pete out of Bex & Pete`,
     members: 'Bex & Pete',
     scores: [
       { round: 1, score: 10.5, max: 20 },
@@ -132,6 +132,20 @@ const teams2 = [
       { round: 10, score: '', max: 20 },
     ],
   },
+  {name: `Daryle & the Spanner`,
+  members: 'Daryle & Rich',
+  scores: [
+    { round: 1, score: 18, max: 20 },
+    { round: 2, score: '', max: 20 },
+    { round: 3, score: '', max: 20 },
+    { round: 4, score: '', max: 20 },
+    { round: 5, score: '', max: 20 },
+    { round: 6, score: '', max: 20 },
+    { round: 7, score: '', max: 20 },
+    { round: 8, score: '', max: 20 },
+    { round: 9, score: '', max: 20 },
+    { round: 10, score: '', max: 20 },
+  ],}
 ];
 
 export default teams2;
