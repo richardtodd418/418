@@ -37,7 +37,10 @@ const RoundInner = props => {
         </li>
         {round.questions.map((question, index) => {
           return (
-            <li key={index} className={`question-wrapper question-wrapper--${index}`}>
+            <li
+              key={index}
+              className={`question-wrapper question-wrapper--${index}`}
+            >
               <p>
                 <span className="question">
                   {index + 1}. {question.question}
@@ -134,7 +137,7 @@ const Round = props => {
     };
 
     const answersObj = {};
-    const answersForPost = answersArray.map((answer, index) => ({
+    const answersForPost = answers.map((answer, index) => ({
       [index + 1]: `${answer.question}: ${answer.answer}`,
     }));
 
@@ -142,7 +145,7 @@ const Round = props => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
     answersObj.team = `${props.round.title} - ${team}`;
-
+    console.log(answersObj);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
