@@ -38,7 +38,7 @@ const teams2 = [
   },
   {
     name: `George & Mildred`,
-    members: '???',
+    members: 'Lin & Johnny',
     scores: [
       { round: 1, score: 14, max: 20 },
       { round: 2, score: '', max: 20 },
