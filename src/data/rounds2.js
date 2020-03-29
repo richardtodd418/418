@@ -275,7 +275,7 @@ const rounds2 = [
         question: 'Not a tale from the orient? (4, 4, 5)',
         answer: (() => (publish_answers[0] ? 'West Side Story' : ''))(),
       },
-      { question: 'William Writer? (5, 6)', answer: 'Billy Elliot' },
+      { question: 'William Writer? (5, 6)', answer: (() => (publish_answers[0] ? 'Billy Elliot' : ''))() },
       {
         question: 'The French poor ones? (3, 10)',
         answer: (() => (publish_answers[0] ? 'Les Miserables' : ''))(),
