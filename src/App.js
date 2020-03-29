@@ -8,11 +8,8 @@ import {
 import Quiz from './components/Quiz';
 import Footer from './components/Footer';
 import Leaderboard from './components/Leaderboard';
-import logo1 from './bucket.png';
 import './styles/App.scss';
 import { Frame } from '@shopify/polaris';
-import rounds from './data/rounds';
-import rounds2 from './data/rounds2';
 import teams from './data/teams';
 import teams2 from './data/teams2';
 
@@ -54,22 +51,23 @@ const App = () => {
               </nav>
             </header>
             <Switch>
-              <Route path="/leaderboard">
+              <Route key="leaderboard" path="/leaderboard">
                 <Leaderboard teams={teams2} />
               </Route>
-              <Route path="/">
-                <Quiz rounds={rounds2} />
-              </Route>
-              <Route path="/leaderboardflange">
+              <Route key="/leaderboardflange" path="/leaderboardflange">
                 <Leaderboard teams={teams} />
               </Route>
-              <Route path="/flange">
-                <Quiz rounds={rounds} />
+              <Route key="/flange" path="/flange">
+                <Quiz />
+              </Route>
+              <Route exact key="/" path="/">
+                <Quiz />
               </Route>
             </Switch>
           </div>
         </div>
         <Footer />
+        
       </Frame>
     </Router>
   );

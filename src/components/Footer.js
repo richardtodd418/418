@@ -1,10 +1,15 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+import { NavLink, Switch } from 'react-router-dom';
 class Footer extends Component {
   render() {
     return (
-      <div>
-        <p className="footer-disclaimer"></p>
+      <div className="footerWrapper">
+        <NavLink to="/flange">
+          Questions
+        </NavLink>
+        <NavLink to="/leaderboardflange">
+          Leaderboard
+        </NavLink>
       </div>
     );
   }

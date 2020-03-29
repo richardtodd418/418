@@ -1,13 +1,17 @@
+// Cousin
+
 /* eslint-disable no-unused-vars */
+const publish_answers = [true, false, false, false, false, false];
+
 const blankRound = [
   {
     title: '',
     date: '',
     deadline: '',
     show_answers: false,
-    publish_answers: false,
     form: true,
     published: false,
+    publish_answers: publish_answers[1],
     questions: [
       { question: '', answer: '' },
       { question: '', answer: '' },
@@ -33,7 +37,7 @@ const blankRound = [
   },
 ];
 
-const publish_answers = [false, false, false, false, false, false];
+
 
 const rounds2 = [
   {
@@ -41,9 +45,9 @@ const rounds2 = [
     date: '2020/03/28',
     deadline: '2020/03/29 20:00',
     show_answers: false,
-    publish_answers: false,
     form: true,
     published: false,
+    publish_answers: publish_answers[5],
     questions: [
       { question: 'Regent or Bond? (7,6)', answer: '' },
       { question: 'Not very practical (4,4)', answer: '' },
@@ -72,9 +76,9 @@ const rounds2 = [
     date: '2020/03/27',
     deadline: '2020/03/27 20:00',
     show_answers: false,
-    publish_answers: false,
     form: true,
     published: false,
+    publish_answers: publish_answers[4],
     questions: [
       { question: 'A hand bag', answer: '' },
       { question: 'Frankly my dear I don’t give a damn!', answer: '' },
@@ -116,9 +120,11 @@ const rounds2 = [
     date: '2020/03/26',
     deadline: '2020/03/26 20:00',
     show_answers: false,
-    publish_answers: false,
     form: true,
     published: false,
+    publish_answers: publish_answers[3],
+    
+    
     questions: [
       { question: 'Tub full of water', answer: 'Bath' },
       { question: 'Professor of rollers', answer: 'Doncaster' },
@@ -150,9 +156,10 @@ const rounds2 = [
     date: '2020/03/25',
     deadline: '2020/03/26 20:00',
     show_answers: false,
-    publish_answers: false,
     form: true,
     published: false,
+    publish_answers: publish_answers[2],
+    
     questions: [
       { question: 'Morse', answer: 'Colin Dexter' },
       { question: 'Frost', answer: 'R D Wingfield' },
@@ -181,63 +188,127 @@ const rounds2 = [
     date: '2020/03/24',
     deadline: '2020/03/25 20:00',
     show_answers: false,
-    publish_answers: false,
     form: true,
-    published: false,
+    published: true,
+    publish_answers: publish_answers[1],
     questions: [
-      { question: '1 W on a U', answer: '1 Wheel on a Unicycle' },
-      { question: '3 BM', answer: '3 Blind Mice' },
-      { question: '4 S in a Y', answer: '4 Seasons in a Year' },
-      { question: '6 S of a C', answer: '6 Sides of a Cube' },
-      { question: '7 W of the W', answer: '7 Wonders of the World' },
-      { question: '8 is TC', answer: '8 is two cubed' },
-      { question: '11 P in a FT', answer: '11 Players in a Football Team' },
-      { question: '12 S of the Z', answer: '12 Signs of the Zodiac' },
-      { question: '13 in a BD', answer: '13 in a Bakers Dozen' },
-      { question: '16 O in a P', answer: '16 Ounces in a Pound ' },
+      {
+        question: '1 W on a U',
+        answer: (() => (publish_answers[0] ? '1 Wheel on a Unicycle' : ''))(),
+      },
+      {
+        question: '3 BM',
+        answer: (() => (publish_answers[1] ? '3 Blind Mice' : ''))(),
+      },
+      {
+        question: '4 S in a Y',
+        answer: (() => (publish_answers[1] ? '4 Seasons in a Year' : ''))(),
+      },
+      {
+        question: '6 S of a C',
+        answer: (() => (publish_answers[1] ? '6 Sides of a Cube' : ''))(),
+      },
+      {
+        question: '7 W of the W',
+        answer: (() => (publish_answers[1] ? '7 Wonders of the World' : ''))(),
+      },
+      {
+        question: '8 is TC',
+        answer: (() => (publish_answers[1] ? '8 is two cubed' : ''))(),
+      },
+      {
+        question: '11 P in a FT',
+        answer: (() =>
+          publish_answers[1] ? '11 Players in a Football Team' : '')(),
+      },
+      {
+        question: '12 S of the Z',
+        answer: (() => (publish_answers[1] ? '12 Signs of the Zodiac' : ''))(),
+      },
+      {
+        question: '13 in a BD',
+        answer: (() => (publish_answers[1] ? '13 in a Bakers Dozen' : ''))(),
+      },
+      {
+        question: '16 O in a P',
+        answer: (() => (publish_answers[1] ? '16 Ounces in a Pound ' : ''))(),
+      },
       {
         question: '24 B B in a P',
-        answer: '4 and 20 Blackbirds baked in a Pie',
+        answer: (() =>
+          publish_answers[1] ? '4 and 20 Blackbirds baked in a Pie' : '')(),
       },
       {
         question: '29 D in F in a LY',
-        answer: '29 Days in February in a Leap Year',
+        answer: (() =>
+          publish_answers[1] ? '29 Days in February in a Leap Year' : '')(),
       },
       {
         question: '32 DF at which WF',
-        answer: '32 Degrees Fahrenheit at which Water Freezes',
+        answer: (() =>
+          publish_answers[1]
+            ? '32 Degrees Fahrenheit at which Water Freezes'
+            : '')(),
       },
-      { question: '57 HV', answer: '57 Heinz Varieties' },
-      { question: '64 S on a CB', answer: '64 Squares on a Chess Board' },
-      { question: '76 T in the BP', answer: '76 Trombones in the Big Parade' },
-      { question: '99 RB', answer: '99 Red Balloons' },
-      { question: '101 D', answer: '101 Dalmatians' },
-      { question: '1760 Y in a M', answer: '1760 Yards in a Mile' },
-      { question: '9,000,000 B in B', answer: '9 Million Bicycles in Beijing' },
+      {
+        question: '57 HV',
+        answer: (() => (publish_answers[1] ? '57 Heinz Varieties' : ''))(),
+      },
+      {
+        question: '64 S on a CB',
+        answer: (() =>
+          publish_answers[1] ? '64 Squares on a Chess Board' : '')(),
+      },
+      {
+        question: '76 T in the BP',
+        answer: (() =>
+          publish_answers[1] ? '76 Trombones in the Big Parade' : '')(),
+      },
+      {
+        question: '99 RB',
+        answer: (() => (publish_answers[1] ? '99 Red Balloons' : ''))(),
+      },
+      {
+        question: '101 D',
+        answer: (() => (publish_answers[1] ? '101 Dalmatians' : ''))(),
+      },
+      {
+        question: '1760 Y in a M',
+        answer: (() => (publish_answers[1] ? '1760 Yards in a Mile' : ''))(),
+      },
+      {
+        question: '9,000,000 B in B',
+        answer: (() =>
+          publish_answers[1] ? '9 Million Bicycles in Beijing' : '')(),
+      },
     ],
   },
   {
     title: '1. Musicals',
     date: '2020/03/28',
     deadline: '2020/03/29 18:00',
-    show_answers: false,
-    publish_answers: false,
-    form: true,
+    show_answers: true,
+    form: false,
     published: true,
+    publish_answers: publish_answers[0],
     questions: [
-      { question: 'The shrew tamed? (4, 2, 4)', answer: '' },
+      {
+        question: 'The shrew tamed? (4, 2, 4)',
+        answer: (() => (publish_answers[0] ? 'Kiss me Kate' : ''))(),
+      },
       {
         question: 'Spectre in singing event? (3, 7, 2, 3, 5)',
-        answer: '',
+        answer: (() => (publish_answers[0] ? 'Phantom of the opera' : ''))(),
       },
       {
         question: '_____ Lennox or _____ get your gun or _____ Oakley? (5)',
-        answer: '',
+        answer: (() => (publish_answers[0] ? 'Annie' : ''))(),
       },
       {
         question:
           'Enough wives for everybody - well at least one each? (5, 6, 3, 5, 8)',
-        answer: '',
+        answer: (() =>
+          publish_answers[0] ? 'Seven Brides for Seven Brothers' : '')(),
       },
       {
         question: 'East enders Flying Squad? (7, 4)',
@@ -275,7 +346,10 @@ const rounds2 = [
         question: 'Not a tale from the orient? (4, 4, 5)',
         answer: (() => (publish_answers[0] ? 'West Side Story' : ''))(),
       },
-      { question: 'William Writer? (5, 6)', answer: (() => (publish_answers[0] ? 'Billy Elliot' : ''))() },
+      {
+        question: 'William Writer? (5, 6)',
+        answer: (() => (publish_answers[0] ? 'Billy Elliot' : ''))(),
+      },
       {
         question: 'The French poor ones? (3, 10)',
         answer: (() => (publish_answers[0] ? 'Les Miserables' : ''))(),

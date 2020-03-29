@@ -41,7 +41,7 @@ const Leaderboard = props => {
         return (
           <React.Fragment key={index}>
             <span className="leaderboard__team">
-              {team.name}({team.members})
+              {team.name}{' '}({team.members})
             </span>
             {scores.map((score, index) => (
               <span key={index}>

@@ -48,9 +48,12 @@
   }
 
   .reveal {
+    font-size: 1.5rem;
+    
     @include media-query($small) {
-      margin-bottom: 0;
+      margin-bottom: 10px;
       margin-top: 10px;
+      font-size: 1.6rem;
     }
 
     .reveal--mobile {
@@ -153,7 +156,8 @@
       }
 
       @include media-query($small) {
-        margin: 7px 0;
+        margin: 15px 0;
+        padding-left: 0;
       }
     }
 
@@ -186,7 +190,12 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
     padding: 10px 15px 15px 15px;
+    min-height: 120px;
 
+    .answer-form__team {
+      font-size: 1.6rem;
+    }
+    
     @include media-query($small) {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto 1fr;
@@ -203,15 +212,25 @@
         font-size: 1.8rem;
       }
     }
+    
+    &.answer-form__submit--wrapper-loading {
+      grid-template-rows: 1fr;
+    }
   }
 
   .answer-form__submit--header {
     grid-area: 1/1/2/3;
     justify-self: center;
+    display: grid;
+    text-align: center;
+    font-size: 1.6rem;
 
     @include media-query($small) {
       grid-area: unset;
-      display: none;
     }
   }
+}
+
+.Polaris-Spinner {
+  margin-top: 15px;
 }

@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+// Cousings
+
 const teamTemplate = {
   name: '',
   members: '',
@@ -18,10 +21,10 @@ const teamTemplate = {
 
 const teams2 = [
   {
-    name: ``,
-    members: '',
+    name: `Hannah`,
+    members: '<---',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 13, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
@@ -34,10 +37,10 @@ const teams2 = [
     ],
   },
   {
-    name: ``,
-    members: '',
+    name: `George and Mildred`,
+    members: '???',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 14, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
@@ -50,10 +53,10 @@ const teams2 = [
     ],
   },
   {
-    name: ``,
-    members: '',
+    name: `Pledger's`,
+    members: 'Aaron & Jodie',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 7, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
@@ -66,10 +69,10 @@ const teams2 = [
     ],
   },
   {
-    name: ``,
-    members: '',
+    name: `The Dead Parrots`,
+    members: 'Sarah & Sam',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 19, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
@@ -82,10 +85,10 @@ const teams2 = [
     ],
   },
   {
-    name: ``,
-    members: '',
+    name: `Eatons of Enfield`,
+    members: 'Simon & Wendy',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 19, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
@@ -98,10 +101,10 @@ const teams2 = [
     ],
   },
   {
-    name: ``,
-    members: '',
+    name: `Twinafox`,
+    members: 'Rach',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 20, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
@@ -114,10 +117,10 @@ const teams2 = [
     ],
   },
   {
-    name: ``,
-    members: '',
+    name: `Bex and Pete out of Bex and Pete`,
+    members: 'Bex & Pete',
     scores: [
-      { round: 1, score: '', max: 20 },
+      { round: 1, score: 10.5, max: 20 },
       { round: 2, score: '', max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },

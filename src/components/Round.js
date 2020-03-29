@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import { Loading, Spinner } from '@shopify/polaris';
 
 const RoundInner = props => {
   const { round, handleReveal, revealed, handleChange, answers } = props;
@@ -21,7 +22,7 @@ const RoundInner = props => {
             <span className="question question--header">Questions</span>
             <span className="answer answer--header">
               <span>Answers </span>
-              {round.show_answers ? (
+              {round.show_answers && round.publish_answers ? (
                 <button
                   className="reveal Polaris-Button"
                   onClick={handleReveal}
@@ -47,16 +48,15 @@ const RoundInner = props => {
                 </span>
                 <span
                   className={
-                    question.answer.length === 0 || round.form
+                    round.form
                       ? 'answer--input'
-                      : round.show_answers === true && revealed === true
+                      : (round.show_answers === true && revealed === true ) || question.answer === ''
                       ? 'answer'
                       : 'answer spoiler'
                   }
                 >
                   <em>
-                    {question.answer.length === 0 ||
-                    round.show_answers === false ? (
+                    {round.show_answers === false ? (
                       <>
                         <label
                           hidden
@@ -73,7 +73,7 @@ const RoundInner = props => {
                         />
                       </>
                     ) : (
-                      question.answer
+                      question.answer === '' ? 'Coming soon...' : question.answer
                     )}
                   </em>
                 </span>
@@ -94,6 +94,15 @@ const Round = props => {
   const answersArray = [...questions];
   const [answers, updateAnswers] = useState(answersArray);
   const [localStorageLoaded, updateLocalStorageLoaded] = useState(false);
+  const [loading, updateLoading] = useState(false);
+  const loadingMarkup = loading && <Loading />;
+  const spinnerMarkup = loading && (
+    <Spinner
+      accessibilityLabel="Submitting answers"
+      size="large"
+      color="inkLightest"
+    />
+  );
 
   useEffect(() => {
     if (round.form && localStorageLoaded === false) {
@@ -126,7 +135,10 @@ const Round = props => {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
+    e.preventDefault();
+    updateLoading(true);
+    const backupURL = `https://script.google.com/macros/s/AKfycbz69zDAc-x3YGSDzzXkYb1s0xyVBK_bE_F3iQEgUE-0liI3TcSS/exec`;
     const team = e.target.querySelector('.answer-form__team').value;
     const encode = data => {
       return Object.keys(data)
@@ -145,14 +157,21 @@ const Round = props => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
     answersObj.team = `${props.round.title} - ${team}`;
-    console.log(answersObj);
-    fetch('/', {
+    // submit to google form as backup
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    await fetch(backupURL, { method: 'POST', body: data})
+      .then(response => console.log('Backed Up!', response))
+      .catch(error => console.error('Error!', error.message));
+
+    await fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'Answers', ...answersObj }),
     })
       .then(() => {
         console.log('Success!');
+        updateLoading(false);
         toggleActive();
         clearLocal();
         const resetAnswers = answers.map(answer => ({
@@ -163,12 +182,11 @@ const Round = props => {
         updateTeam('');
       })
       .catch(error => console.log(error));
-
-    e.preventDefault();
   };
 
   return (
     <div className="round-wrapper">
+      {loadingMarkup}
       {round.form ? (
         <form
           name="Answers"
@@ -178,6 +196,7 @@ const Round = props => {
           netlify="true"
         >
           <details open={props.index === 0 ? true : ''}>
+            <input type="hidden" name="round" value={props.round.title} id="round"/>
             <RoundInner
               index={props.index}
               round={round}
@@ -186,26 +205,33 @@ const Round = props => {
               handleChange={handleChange}
               answers={answers}
             />
-            <span className="answer-form__submit--wrapper">
+            <span className={`answer-form__submit--wrapper ${loading ? 'answer-form__submit--wrapper-loading' : ''}`}>
               <p className="answer-form__submit--header Polaris-Heading">
-                Submit your answers
+                {loading ? 'Submitting' : 'Submit your answers'}
+                {loading ? spinnerMarkup : ''}
               </p>
-              <label hidden htmlFor="team-name">
-                Team name
-              </label>
-              <input
-                required
-                className="Polaris-TextField__Input answer-form__team"
-                placeholder="Team name"
-                name="Team name"
-                id="team-name"
-                type="text"
-                value={teamValue}
-                onChange={handleTeamChange}
-              />
-              <button type="submit" className="reveal Polaris-Button">
-                Submit answers
-              </button>
+              {loading ? (
+                ''
+              ) : (
+                <>
+                  <label hidden htmlFor="team-name">
+                    Team name
+                  </label>
+                  <input
+                    required
+                    className="Polaris-TextField__Input answer-form__team"
+                    placeholder="Team name"
+                    name="Team name"
+                    id="team-name"
+                    type="text"
+                    value={teamValue}
+                    onChange={handleTeamChange}
+                  />
+                  <button type="submit" className="reveal Polaris-Button">
+                    Submit
+                  </button>
+                </>
+              )}
             </span>
           </details>
         </form>
