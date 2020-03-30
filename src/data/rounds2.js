@@ -149,7 +149,7 @@ const rounds2 = [
     ],
   },
   {
-    title: '3. Sleuth Creators',
+    title: '3. Sleuth Creators - Name the author/creator',
     date: '2020/03/25',
     deadline: '2020/03/26 20:00',
     show_answers: false,
