@@ -4,7 +4,7 @@
 
 // Currently can't have form and show_answers set to false at the same time
 
-const publish_answers = [true, false, false, false, false, false];
+const publish_answers = [true, true, true, true, true, false, false];
 
 
 /* eslint-disable no-unused-vars */
@@ -15,6 +15,7 @@ const blankRound = [
     deadline: '',
     show_answers: false,
     form: true,
+    published: true,
     publish_answers: publish_answers[1],
     questions: [
       { question: '', answer: '' },
@@ -43,12 +44,43 @@ const blankRound = [
 
 const rounds = [
   {
+   title: '7. Nursery Rhymes',
+    date: '2020/03/30',
+    deadline: '2020/03/31 20:00',
+    show_answers: false,
+    form: true,
+    published: true,
+    publish_answers: publish_answers[6],
+    questions: [
+      { question: 'How many blind mice were there?', answer: '' },
+      { question: 'What did nimble jack jump over?', answer: '' },
+      { question: 'What was the queen eating in her parlour?', answer: '' },
+      { question: 'Why was the old man thrown down the stairs?', answer: '' },
+      { question: 'What was the colour of the owl’s and the pussy cat’s boat', answer: '' },
+      { question: 'To where would you ride a cock horse?', answer: '' },
+      { question: 'Who lost her sheep?', answer: '' },
+      { question: 'What would give to your sons if you had no daughters?', answer: '' },
+      { question: 'Who came tumbling after?', answer: '' },
+      { question: 'What was Wee Willy Winkie wearing when he ran through the street?', answer: '' },
+      { question: 'Who came to see the nut tree?', answer: '' },
+      { question: 'For how long had the Pease pudding been in the pot?', answer: '' },
+      { question: 'Who is going to pay up when rich?', answer: '' },
+      { question: 'From what did Jack pull the plum?', answer: '' },
+      { question: 'Who found the pocket?', answer: '' },
+      { question: 'Who could eat no lean?', answer: '' },
+      { question: 'Who was warming her pretty little toes?', answer: '' },
+      { question: 'Which ladybird escaped the conflagration?', answer: '' },
+      { question: 'Who said to whom tomorrow will be Monday?', answer: '' },
+      { question: 'Who did puss look at in London?', answer: '' },
+    ],
+  },
+  {
     title: '6. Chocolates',
     date: '2020/03/28',
     deadline: '2020/03/29 20:00',
-    show_answers: false,
+    show_answers: true,
     published: true,
-    form: true,
+    form: false,
     publish_answers: publish_answers[5],
     questions: [
       { question: 'Regent or Bond? (7,6)', answer: '' },

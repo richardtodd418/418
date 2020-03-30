@@ -1,7 +1,7 @@
 // Cousin
 
 /* eslint-disable no-unused-vars */
-const publish_answers = [true, false, false, false, false, false];
+const publish_answers = [true, true, false, false, false, false, false];
 
 const blankRound = [
   {
@@ -36,8 +36,6 @@ const blankRound = [
     ],
   },
 ];
-
-
 
 const rounds2 = [
   {
@@ -123,8 +121,7 @@ const rounds2 = [
     form: true,
     published: false,
     publish_answers: publish_answers[3],
-    
-    
+
     questions: [
       { question: 'Tub full of water', answer: 'Bath' },
       { question: 'Professor of rollers', answer: 'Doncaster' },
@@ -157,44 +154,104 @@ const rounds2 = [
     deadline: '2020/03/26 20:00',
     show_answers: false,
     form: true,
-    published: false,
+    published: true,
     publish_answers: publish_answers[2],
-    
     questions: [
-      { question: 'Morse', answer: 'Colin Dexter' },
-      { question: 'Frost', answer: 'R D Wingfield' },
-      { question: 'Wexford', answer: 'Ruth Rendell' },
-      { question: 'Poirot', answer: 'Agatha Christie' },
-      { question: 'Foyle', answer: 'Anthony Horowitz' },
-      { question: 'Colombo', answer: 'William Link and Richard Levinson' },
-      { question: 'Inspector Rebus', answer: 'Ian Rankin' },
-      { question: 'Maigret', answer: 'George Simenon' },
-      { question: 'Harry Hole', answer: 'Jo Nesbo' },
-      { question: 'Sherlock Holmes', answer: 'Sir Arthur Conan Doyle' },
-      { question: 'Brother Cadfel', answer: 'Ellis Peters' },
-      { question: 'Miss Marple', answer: 'Agatha Christie' },
-      { question: 'Philip Marlowe', answer: 'Raymond Chandler' },
-      { question: 'Lord Peter Wimsey', answer: 'Dorothy L Sayers' },
-      { question: 'Jack Reacher', answer: 'Lee Child' },
-      { question: 'Perry Mason', answer: 'Erle Stanley Gardner' },
-      { question: 'Hieronymus “Harry” Bosch', answer: 'Michael Connely' },
-      { question: 'Dick Tracy', answer: 'Chester Gould' },
-      { question: 'Seeley Booth (Bones)', answer: 'Kathy Riechs' },
-      { question: 'Adam Dalgleish', answer: 'P D James' },
+      {
+        question: 'Morse',
+        answer: (() => (publish_answers[2] ? 'Colin Dexter' : ''))(),
+      },
+      {
+        question: 'Frost',
+        answer: (() => (publish_answers[2] ? 'R D Wingfield' : ''))(),
+      },
+      {
+        question: 'Wexford',
+        answer: (() => (publish_answers[2] ? 'Ruth Rendell' : ''))(),
+      },
+      {
+        question: 'Poirot',
+        answer: (() => (publish_answers[2] ? 'Agatha Christie' : ''))(),
+      },
+      {
+        question: 'Foyle',
+        answer: (() => (publish_answers[2] ? 'Anthony Horowitz' : ''))(),
+      },
+      {
+        question: 'Colombo',
+        answer: (() =>
+          publish_answers[2] ? 'William Link and Richard Levinson' : '')(),
+      },
+      {
+        question: 'Inspector Rebus',
+        answer: (() => (publish_answers[2] ? 'Ian Rankin' : ''))(),
+      },
+      {
+        question: 'Maigret',
+        answer: (() => (publish_answers[2] ? 'George Simenon' : ''))(),
+      },
+      {
+        question: 'Harry Hole',
+        answer: (() => (publish_answers[2] ? 'Jo Nesbo' : ''))(),
+      },
+      {
+        question: 'Sherlock Holmes',
+        answer: (() => (publish_answers[2] ? 'Sir Arthur Conan Doyle' : ''))(),
+      },
+      {
+        question: 'Brother Cadfel',
+        answer: (() => (publish_answers[2] ? 'Ellis Peters' : ''))(),
+      },
+      {
+        question: 'Sam Spade',
+        answer: (() => (publish_answers[2] ? 'Dashiell Hammett' : ''))(),
+      },
+      {
+        question: 'Philip Marlowe',
+        answer: (() => (publish_answers[2] ? 'Raymond Chandler' : ''))(),
+      },
+      {
+        question: 'Lord Peter Wimsey',
+        answer: (() => (publish_answers[2] ? 'Dorothy L Sayers' : ''))(),
+      },
+      {
+        question: 'Jack Reacher',
+        answer: (() => (publish_answers[2] ? 'Lee Child' : ''))(),
+      },
+      {
+        question: 'Perry Mason',
+        answer: (() => (publish_answers[2] ? 'Erle Stanley Gardner' : ''))(),
+      },
+      {
+        question: 'Hieronymus “Harry” Bosch',
+        answer: (() => (publish_answers[2] ? 'Michael Connely' : ''))(),
+      },
+      {
+        question: 'Dick Tracy',
+        answer: (() => (publish_answers[2] ? 'Chester Gould' : ''))(),
+      },
+      {
+        question: 'Dirk Gently',
+        answer: (() => (publish_answers[2] ? 'Douglas Adams' : ''))(),
+      },
+      {
+        question: 'Adam Dalgleish',
+        answer: (() => (publish_answers[2] ? 'P D James' : ''))(),
+      },
     ],
   },
   {
     title: '2. Initial Numbers',
     date: '2020/03/29',
     deadline: '2020/03/30 20:00',
-    show_answers: false,
-    form: true,
+    show_answers: true,
+    form: false,
     published: true,
     publish_answers: publish_answers[1],
     questions: [
       {
         question: '1 W on a U',
-        answer: (() => (publish_answers[0] ? '1 Wheel on a Unicycle' : ''))(),
+        answer: (() => (publish_answers[1] ? '1 Wheel on a Unicycle' : ''))(),
       },
       {
         question: '3 BM',

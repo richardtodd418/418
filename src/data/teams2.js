@@ -25,7 +25,7 @@ const teams2 = [
     members: '<---',
     scores: [
       { round: 1, score: 13, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 15, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -41,7 +41,7 @@ const teams2 = [
     members: 'Lin & Johnny',
     scores: [
       { round: 1, score: 14, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 15, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -57,7 +57,7 @@ const teams2 = [
     members: 'Aaron & Jodie',
     scores: [
       { round: 1, score: 7, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 11, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -73,7 +73,7 @@ const teams2 = [
     members: 'Sarah & Sam',
     scores: [
       { round: 1, score: 19, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 20, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -89,7 +89,7 @@ const teams2 = [
     members: 'Simon & Wendy',
     scores: [
       { round: 1, score: 19, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 17, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -105,7 +105,7 @@ const teams2 = [
     members: 'Rach & Danny',
     scores: [
       { round: 1, score: 20, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 20, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -121,7 +121,7 @@ const teams2 = [
     members: 'Bex & Pete',
     scores: [
       { round: 1, score: 10.5, max: 20 },
-      { round: 2, score: '', max: 20 },
+      { round: 2, score: 15, max: 20 },
       { round: 3, score: '', max: 20 },
       { round: 4, score: '', max: 20 },
       { round: 5, score: '', max: 20 },
@@ -136,7 +136,7 @@ const teams2 = [
   members: 'Daryle & Rich',
   scores: [
     { round: 1, score: 18, max: 20 },
-    { round: 2, score: '', max: 20 },
+    { round: 2, score: 14, max: 20 },
     { round: 3, score: '', max: 20 },
     { round: 4, score: '', max: 20 },
     { round: 5, score: '', max: 20 },
