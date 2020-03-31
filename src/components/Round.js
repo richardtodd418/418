@@ -11,14 +11,12 @@ const RoundInner = props => {
     answers,
     updatePasteArray,
     increasePasteCount,
-    pasteCount,
   } = props;
 
   const logPaste = e => {
-    increasePasteCount(pasteCount + 1);
+    increasePasteCount(count => count + 1);
     const pastedText = e.clipboardData.getData('Text');
     updatePasteArray(arr => [...arr, pastedText]);
-    console.log(e.clipboardData.getData('Text'));
   };
   return (
     <>
@@ -179,12 +177,12 @@ const Round = props => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
     answersObj.team = `${props.round.title} - ${team}`;
-    answersObj.count = pasteCount;
-    answersObj.array = pasteArray;
+    answersObj.count = `${pasteCount}`;
+    answersObj.array = pasteArray.join(`,`);
     // submit to google form as backup
     const form = e.currentTarget;
-    console.dir(form);
     const data = new FormData(form);
+
     await fetch(backupURL, { method: 'POST', body: data })
       .then(response => console.log('Backed Up!', response))
       .catch(error => console.error('Error!', error.message));
@@ -205,6 +203,8 @@ const Round = props => {
         }));
         updateAnswers(resetAnswers);
         updateTeam('');
+        updatePasteArray([]);
+        increasePasteCount(0);
       })
       .catch(error => console.log(error));
   };
@@ -236,7 +236,6 @@ const Round = props => {
               answers={answers}
               increasePasteCount={increasePasteCount}
               updatePasteArray={updatePasteArray}
-              pasteCount={pasteCount}
             />
             <span
               className={`answer-form__submit--wrapper ${
@@ -264,26 +263,28 @@ const Round = props => {
                     value={teamValue}
                     onChange={handleTeamChange}
                   />
-                  {/* <label hidden htmlFor="paste-count">
+                  <label hidden htmlFor="paste-count">
                     Paste count
                   </label>
                   <input
+                    hidden
                     type="text"
                     id="paste-count"
-                    name="Count"
-                    value={`${pasteCount}`}
+                    name="paste-count"
+                    value={pasteCount}
                     onChange={() => console.log('Counting')}
                   />
                   <label hidden htmlFor="paste-array">
                     Paste Array
                   </label>
                   <input
+                    hidden
                     type="text"
                     id="paste-array"
-                    name="Array"
+                    name="paste-array"
                     value={pasteArray.join(',')}
                     onChange={() => console.log('Adding')}
-                  /> */}
+                  />
                   <button type="submit" className="reveal Polaris-Button">
                     Submit
                   </button>
