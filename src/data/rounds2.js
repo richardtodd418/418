@@ -1,7 +1,7 @@
 // Cousin
 
 /* eslint-disable no-unused-vars */
-const publish_answers = [true, true, false, false, false, false, false];
+const publish_answers = [true, true, true, false, false, false, false];
 
 const blankRound = [
   {
@@ -115,93 +115,93 @@ const rounds2 = [
   },
   {
     title: '4. Towns and Cities',
-    date: '2020/03/26',
-    deadline: '2020/03/26 20:00',
+    date: '2020/03/31',
+    deadline: '2020/04/01 20:00',
     show_answers: false,
     form: true,
-    published: false,
+    published: true,
     publish_answers: publish_answers[3],
 
     questions: [
       {
         question: 'Tub full of water',
-        answer: (() => (publish_answers[2] ? 'Bath' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Bath' : ''))(),
       },
       {
         question: 'Professor of rollers',
-        answer: (() => (publish_answers[2] ? 'Doncaster' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Doncaster' : ''))(),
       },
       {
         question: 'Witches attempt to meet',
-        answer: (() => (publish_answers[2] ? 'Coventry' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Coventry' : ''))(),
       },
       {
         question: 'A Person who is leaving',
-        answer: (() => (publish_answers[2] ? 'Exeter' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Exeter' : ''))(),
       },
       {
         question: 'People Rock',
-        answer: (() => (publish_answers[2] ? 'Folkstone' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Folkstone' : ''))(),
       },
       {
         question: 'A complete bacon',
-        answer: (() => (publish_answers[2] ? 'Fulham' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Fulham' : ''))(),
       },
       {
         question: 'Ship’s men',
-        answer: (() => (publish_answers[2] ? 'Crewe' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Crewe' : ''))(),
       },
       {
         question: 'Tying Meat',
-        answer: (() => (publish_answers[2] ? 'Nottingham' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Nottingham' : ''))(),
       },
       {
         question: 'Latest Fortified Wine',
-        answer: (() => (publish_answers[2] ? 'Newport' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Newport' : ''))(),
       },
       {
         question: 'Religious Skull',
-        answer: (() => (publish_answers[2] ? 'Holyhead' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Holyhead' : ''))(),
       },
       {
         question: 'Detective clues',
-        answer: (() => (publish_answers[2] ? 'Leeds' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Leeds' : ''))(),
       },
       {
         question: 'Sounds like Piggot’s town',
-        answer: (() => (publish_answers[2] ? 'Leicester' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Leicester' : ''))(),
       },
       {
         question: 'Where cattle cross the river',
-        answer: (() => (publish_answers[2] ? 'Oxbridge or Cowbridge' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Oxbridge or Cowbridge' : ''))(),
       },
       {
         question: 'Almost speechless in front of chips',
-        answer: (() => (publish_answers[2] ? 'Dumfries' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Dumfries' : ''))(),
       },
       {
         question: 'Mothers entrance',
-        answer: (() => (publish_answers[2] ? 'Margate' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Margate' : ''))(),
       },
       {
         question: 'USA President',
-        answer: (() => (publish_answers[2] ? 'Licoln or Washington' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Licoln or Washington' : ''))(),
       },
       {
         question: 'Chocolate bar without that is',
-        answer: (() => (publish_answers[2] ? 'York' : ''))(),
+        answer: (() => (publish_answers[3] ? 'York' : ''))(),
       },
       {
         question: 'Fake First Lady',
-        answer: (() => (publish_answers[2] ? 'Evesham' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Evesham' : ''))(),
       },
       {
         question: 'Rifle',
-        answer: (() => (publish_answers[2] ? 'Winchester or Enfield' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Winchester or Enfield' : ''))(),
       },
       {
         question: 'Cook al fresco',
-        answer: (() => (publish_answers[2] ? 'Sheffield' : ''))(),
+        answer: (() => (publish_answers[3] ? 'Sheffield' : ''))(),
       },
     ],
   },
