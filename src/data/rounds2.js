@@ -123,37 +123,94 @@ const rounds2 = [
     publish_answers: publish_answers[3],
 
     questions: [
-      { question: 'Tub full of water', answer: 'Bath' },
-      { question: 'Professor of rollers', answer: 'Doncaster' },
-      { question: 'Witches attempt to meet', answer: 'Coventry' },
-      { question: 'A Person who is leaving', answer: 'Exeter' },
-      { question: 'People Rock', answer: 'Folkstone' },
-      { question: 'A complete bacon', answer: 'Fulham' },
-      { question: 'Ship’s men', answer: 'Crewe' },
-      { question: 'Tying Meat', answer: 'Nottingham' },
-      { question: 'Latest Fortified Wine', answer: 'Newport' },
-      { question: 'Religious Skull', answer: 'Holyhead' },
-      { question: 'Detective clues', answer: 'Leeds' },
-      { question: 'Sounds like Piggot’s town', answer: 'Leicester' },
+      {
+        question: 'Tub full of water',
+        answer: (() => (publish_answers[2] ? 'Bath' : ''))(),
+      },
+      {
+        question: 'Professor of rollers',
+        answer: (() => (publish_answers[2] ? 'Doncaster' : ''))(),
+      },
+      {
+        question: 'Witches attempt to meet',
+        answer: (() => (publish_answers[2] ? 'Coventry' : ''))(),
+      },
+      {
+        question: 'A Person who is leaving',
+        answer: (() => (publish_answers[2] ? 'Exeter' : ''))(),
+      },
+      {
+        question: 'People Rock',
+        answer: (() => (publish_answers[2] ? 'Folkstone' : ''))(),
+      },
+      {
+        question: 'A complete bacon',
+        answer: (() => (publish_answers[2] ? 'Fulham' : ''))(),
+      },
+      {
+        question: 'Ship’s men',
+        answer: (() => (publish_answers[2] ? 'Crewe' : ''))(),
+      },
+      {
+        question: 'Tying Meat',
+        answer: (() => (publish_answers[2] ? 'Nottingham' : ''))(),
+      },
+      {
+        question: 'Latest Fortified Wine',
+        answer: (() => (publish_answers[2] ? 'Newport' : ''))(),
+      },
+      {
+        question: 'Religious Skull',
+        answer: (() => (publish_answers[2] ? 'Holyhead' : ''))(),
+      },
+      {
+        question: 'Detective clues',
+        answer: (() => (publish_answers[2] ? 'Leeds' : ''))(),
+      },
+      {
+        question: 'Sounds like Piggot’s town',
+        answer: (() => (publish_answers[2] ? 'Leicester' : ''))(),
+      },
       {
         question: 'Where cattle cross the river',
-        answer: 'Oxbridge or Cowbridge',
+        answer: (() => (publish_answers[2] ? 'Oxbridge or Cowbridge' : ''))(),
       },
-      { question: 'Almost speechless in front of chips', answer: 'Dumfries' },
-      { question: 'Mothers entrance', answer: 'Margate' },
-      { question: 'USA President', answer: 'Licoln or Washington' },
-      { question: 'Chocolate bar without that is', answer: 'York' },
-      { question: 'Fake First Lady', answer: 'Evesham' },
-      { question: 'Rifle', answer: 'Winchester or Enfield' },
-      { question: 'Cook al fresco', answer: 'Sheffield' },
+      {
+        question: 'Almost speechless in front of chips',
+        answer: (() => (publish_answers[2] ? 'Dumfries' : ''))(),
+      },
+      {
+        question: 'Mothers entrance',
+        answer: (() => (publish_answers[2] ? 'Margate' : ''))(),
+      },
+      {
+        question: 'USA President',
+        answer: (() => (publish_answers[2] ? 'Licoln or Washington' : ''))(),
+      },
+      {
+        question: 'Chocolate bar without that is',
+        answer: (() => (publish_answers[2] ? 'York' : ''))(),
+      },
+      {
+        question: 'Fake First Lady',
+        answer: (() => (publish_answers[2] ? 'Evesham' : ''))(),
+      },
+      {
+        question: 'Rifle',
+        answer: (() => (publish_answers[2] ? 'Winchester or Enfield' : ''))(),
+      },
+      {
+        question: 'Cook al fresco',
+        answer: (() => (publish_answers[2] ? 'Sheffield' : ''))(),
+      },
     ],
   },
   {
     title: '3. Sleuth Creators - Name the author/creator',
-    date: '2020/03/25',
-    deadline: '2020/03/26 20:00',
-    show_answers: false,
-    form: true,
+    date: '2020/03/30',
+    deadline: '2020/03/31 20:00',
+    show_answers: true,
+    form: false,
     published: true,
     publish_answers: publish_answers[2],
     questions: [
