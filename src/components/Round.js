@@ -3,7 +3,23 @@ import moment from 'moment';
 import { Loading, Spinner } from '@shopify/polaris';
 
 const RoundInner = props => {
-  const { round, handleReveal, revealed, handleChange, answers } = props;
+  const {
+    round,
+    handleReveal,
+    revealed,
+    handleChange,
+    answers,
+    updatePasteArray,
+    increasePasteCount,
+    pasteCount,
+  } = props;
+
+  const logPaste = e => {
+    increasePasteCount(pasteCount + 1);
+    const pastedText = e.clipboardData.getData('Text');
+    updatePasteArray(arr => [...arr, pastedText]);
+    console.log(e.clipboardData.getData('Text'));
+  };
   return (
     <>
       <summary>
@@ -50,7 +66,8 @@ const RoundInner = props => {
                   className={
                     round.form
                       ? 'answer--input'
-                      : (round.show_answers === true && revealed === true ) || question.answer === ''
+                      : (round.show_answers === true && revealed === true) ||
+                        question.answer === ''
                       ? 'answer'
                       : 'answer spoiler'
                   }
@@ -70,10 +87,13 @@ const RoundInner = props => {
                           placeholder="Answer here"
                           onChange={handleChange}
                           value={answers[index].answer}
+                          onPaste={logPaste}
                         />
                       </>
+                    ) : question.answer === '' ? (
+                      'Coming soon...'
                     ) : (
-                      question.answer === '' ? 'Coming soon...' : question.answer
+                      question.answer
                     )}
                   </em>
                 </span>
@@ -90,6 +110,8 @@ const Round = props => {
   const [revealed, updateRevealed] = useState(false);
   const [teamValue, updateTeam] = useState('');
   const { round, toggleActive } = props;
+  const [pasteCount, increasePasteCount] = useState(0);
+  const [pasteArray, updatePasteArray] = useState([]);
   const { questions } = round;
   const answersArray = [...questions];
   const [answers, updateAnswers] = useState(answersArray);
@@ -157,10 +179,13 @@ const Round = props => {
       answersObj[Object.keys(answer)] = answer[Object.keys(answer)];
     });
     answersObj.team = `${props.round.title} - ${team}`;
+    answersObj.count = pasteCount;
+    answersObj.array = pasteArray;
     // submit to google form as backup
     const form = e.currentTarget;
+    console.dir(form);
     const data = new FormData(form);
-    await fetch(backupURL, { method: 'POST', body: data})
+    await fetch(backupURL, { method: 'POST', body: data })
       .then(response => console.log('Backed Up!', response))
       .catch(error => console.error('Error!', error.message));
 
@@ -196,7 +221,12 @@ const Round = props => {
           netlify="true"
         >
           <details open={props.index === 0 ? true : ''}>
-            <input type="hidden" name="round" value={props.round.title} id="round"/>
+            <input
+              type="hidden"
+              name="round"
+              value={props.round.title}
+              id="round"
+            />
             <RoundInner
               index={props.index}
               round={round}
@@ -204,8 +234,15 @@ const Round = props => {
               handleReveal={handleReveal}
               handleChange={handleChange}
               answers={answers}
+              increasePasteCount={increasePasteCount}
+              updatePasteArray={updatePasteArray}
+              pasteCount={pasteCount}
             />
-            <span className={`answer-form__submit--wrapper ${loading ? 'answer-form__submit--wrapper-loading' : ''}`}>
+            <span
+              className={`answer-form__submit--wrapper ${
+                loading ? 'answer-form__submit--wrapper-loading' : ''
+              }`}
+            >
               <p className="answer-form__submit--header Polaris-Heading">
                 {loading ? 'Submitting' : 'Submit your answers'}
                 {loading ? spinnerMarkup : ''}
@@ -227,6 +264,26 @@ const Round = props => {
                     value={teamValue}
                     onChange={handleTeamChange}
                   />
+                  {/* <label hidden htmlFor="paste-count">
+                    Paste count
+                  </label>
+                  <input
+                    type="text"
+                    id="paste-count"
+                    name="Count"
+                    value={`${pasteCount}`}
+                    onChange={() => console.log('Counting')}
+                  />
+                  <label hidden htmlFor="paste-array">
+                    Paste Array
+                  </label>
+                  <input
+                    type="text"
+                    id="paste-array"
+                    name="Array"
+                    value={pasteArray.join(',')}
+                    onChange={() => console.log('Adding')}
+                  /> */}
                   <button type="submit" className="reveal Polaris-Button">
                     Submit
                   </button>
