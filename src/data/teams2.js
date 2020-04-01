@@ -31,9 +31,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {
@@ -47,9 +44,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {
@@ -63,9 +57,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {
@@ -79,9 +70,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {
@@ -95,9 +83,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {
@@ -111,9 +96,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {
@@ -127,9 +109,6 @@ const teams2 = [
       { round: 5, score: '', max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
-      { round: 8, score: '', max: 20 },
-      { round: 9, score: '', max: 20 },
-      { round: 10, score: '', max: 20 },
     ],
   },
   {name: `Daryle & the Spanner`,
@@ -142,9 +121,6 @@ const teams2 = [
     { round: 5, score: '', max: 20 },
     { round: 6, score: '', max: 20 },
     { round: 7, score: '', max: 20 },
-    { round: 8, score: '', max: 20 },
-    { round: 9, score: '', max: 20 },
-    { round: 10, score: '', max: 20 },
   ],}
 ];
 
