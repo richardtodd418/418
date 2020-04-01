@@ -2,7 +2,7 @@
 
 // Currently can't have form and show_answers set to false at the same time
 
-const publish_answers = [true, true, true, true, true, false, false];
+const publish_answers = [false, false, false, false, true, false, false];
 
 /* eslint-disable no-unused-vars */
 const blankRound = [
@@ -12,7 +12,7 @@ const blankRound = [
     deadline: '',
     show_answers: false,
     form: true,
-    published: true,
+    published: false,
     publish_answers: publish_answers[1],
     questions: [
       { question: '', answer: '' },
@@ -77,7 +77,7 @@ const rounds = [
     deadline: '2020/03/31 20:00',
     show_answers: true,
     form: false,
-    published: true,
+    published: false,
     publish_answers: publish_answers[6],
     questions: [
       { question: 'How many blind mice were there?', answer: 'Three' },
@@ -120,7 +120,7 @@ const rounds = [
     date: '2020/03/28',
     deadline: '2020/03/29 20:00',
     show_answers: true,
-    published: true,
+    published: false,
     form: false,
     publish_answers: publish_answers[5],
     questions: [
@@ -151,7 +151,7 @@ const rounds = [
     date: '2020/03/27',
     deadline: '2020/03/27 20:00',
     show_answers: true,
-    published: true,
+    published: false,
     form: false,
     publish_answers: publish_answers[4],
     questions: [
@@ -219,7 +219,7 @@ const rounds = [
     date: '2020/03/26',
     deadline: '2020/03/26 20:00',
     show_answers: true,
-    published: true,
+    published: false,
     form: false,
     publish_answers: publish_answers[3],
     questions: [
@@ -253,7 +253,7 @@ const rounds = [
     date: '2020/03/25',
     deadline: '2020/03/26 20:00',
     show_answers: true,
-    published: true,
+    published: false,
     form: false,
     publish_answers: publish_answers[2],
     questions: [
@@ -284,7 +284,7 @@ const rounds = [
     date: '2020/03/24',
     deadline: '2020/03/25 20:00',
     show_answers: true,
-    published: true,
+    published: false,
     form: false,
     publish_answers: publish_answers[1],
     questions: [
@@ -324,7 +324,7 @@ const rounds = [
     date: '2020/03/22',
     deadline: '2020/03/24 - 20:00',
     show_answers: true,
-    published: true,
+    published: false,
     form: false,
     publish_answers: publish_answers[0],
     questions: [
