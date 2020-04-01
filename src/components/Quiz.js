@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import Round from './Round';
-import { Toast } from '@shopify/polaris';
+import { Toast, Banner } from '@shopify/polaris';
 
 import { useLocation } from 'react-router-dom';
 import rounds2 from '../data/rounds2';
@@ -25,6 +25,11 @@ const Quiz = () => {
   ) : null;
   return (
     <div className="quiz-wrapper">
+      <Banner title="Round 5" status="info">
+        Famous quotes. If the quote was said by a real person/s, the answer
+        is their name. For fictional characters, the answer is the name of the
+        character, not the name of the actor/actress portraying them. In the unlikely even the quote was said by more than one person, the answers I have stand.
+      </Banner>
       {filterRounds.map((round, index) => (
         <Round
           key={`Round--${index}`}

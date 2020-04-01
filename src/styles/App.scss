@@ -49,6 +49,7 @@
   max-width: 1050px;
   justify-self: center;
   width: 95%;
+  margin-top: 15px;
 
   @include media-query($large-up) {
     min-width: 950px;
