@@ -1,7 +1,7 @@
 // Cousin
 
 /* eslint-disable no-unused-vars */
-const publish_answers = [true, true, true, false, false, false, false];
+const publish_answers = [true, true, true, true, false, false, false];
 
 const blankRound = [
   {
@@ -75,7 +75,7 @@ const rounds2 = [
     deadline: '2020/03/27 20:00',
     show_answers: false,
     form: true,
-    published: false,
+    published: true,
     publish_answers: publish_answers[4],
     questions: [
       { question: 'A hand bag', answer: '' },
@@ -117,8 +117,8 @@ const rounds2 = [
     title: '4. Towns and Cities',
     date: '2020/03/31',
     deadline: '2020/04/01 20:00',
-    show_answers: false,
-    form: true,
+    show_answers: true,
+    form: false,
     published: true,
     publish_answers: publish_answers[3],
 

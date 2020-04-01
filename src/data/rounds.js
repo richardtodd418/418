@@ -2,7 +2,7 @@
 
 // Currently can't have form and show_answers set to false at the same time
 
-const publish_answers = [false, false, false, false, true, false, false];
+const publish_answers = [false, false, false, false, false, false, false];
 
 /* eslint-disable no-unused-vars */
 const blankRound = [
