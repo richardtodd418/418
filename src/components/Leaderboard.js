@@ -35,9 +35,6 @@ const Leaderboard = props => {
       <span className="leaderboard__header">5</span>
       <span className="leaderboard__header">6</span>
       <span className="leaderboard__header">7</span>
-      <span className="leaderboard__header">8</span>
-      <span className="leaderboard__header">9</span>
-      <span className="leaderboard__header">10</span>
       <span className="leaderboard__header">Total</span>
       {sortedTeams.map((team, index) => {
         const { scores } = team;
