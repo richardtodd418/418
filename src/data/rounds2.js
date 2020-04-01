@@ -71,8 +71,8 @@ const rounds2 = [
   },
   {
     title: `5. Who's line is it anyway?`,
-    date: '2020/03/27',
-    deadline: '2020/03/27 20:00',
+    date: '2020/04/01',
+    deadline: '2020/04/02 20:00',
     show_answers: false,
     form: true,
     published: true,
