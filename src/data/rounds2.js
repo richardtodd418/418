@@ -1,7 +1,7 @@
 // Cousin
 
 /* eslint-disable no-unused-vars */
-const publish_answers = [true, true, true, true, false, false, false];
+const publish_answers = [true, true, true, true, true, false, false];
 
 const blankRound = [
   {
@@ -44,7 +44,7 @@ const rounds2 = [
     deadline: '2020/03/29 20:00',
     show_answers: false,
     form: true,
-    published: false,
+    published: true,
     publish_answers: publish_answers[5],
     questions: [
       { question: 'Regent or Bond? (7,6)', answer: '' },
@@ -73,43 +73,67 @@ const rounds2 = [
     title: `5. Who's line is it anyway?`,
     date: '2020/04/01',
     deadline: '2020/04/02 20:00',
-    show_answers: false,
-    form: true,
+    show_answers: true,
+    form: false,
     published: true,
     publish_answers: publish_answers[4],
     questions: [
-      { question: 'A hand bag', answer: '' },
-      { question: 'Frankly my dear I don’t give a damn!', answer: '' },
-      { question: 'I believe it is peace for our time', answer: '' },
-      { question: 'To infinity and beyond', answer: '' },
+      { question: 'A hand bag', answer: 'Lady Bracknell' },
+      {
+        question: 'Frankly my dear I don’t give a damn!',
+        answer: 'Rhett Butler',
+      },
+      {
+        question: 'I believe it is peace for our time',
+        answer: 'Neville Chamberlain',
+      },
+      { question: 'To infinity and beyond', answer: 'Buzz Lightyear' },
       {
         question: 'Never has so much, been owed by so many, to so few.',
-        answer: '',
+        answer: 'Winston Churchill',
       },
       {
         question:
           'I’m playing all ofthe notes but not necessarily in the right order',
-        answer: '',
+        answer: 'Eric Morecombe',
       },
-      { question: 'Four Candles', answer: '' },
-      { question: 'To be or not to be: that is the question?', answer: '' },
-      { question: 'Stop throwing those bloody spears at me.', answer: '' },
+      { question: 'Four Candles', answer: 'Two Ronnies' },
+      {
+        question: 'To be or not to be: that is the question?',
+        answer: 'Hamlet',
+      },
+      {
+        question: 'Stop throwing those bloody spears at me.',
+        answer: 'Peachy Carnehan',
+      },
       {
         question: 'That’s one small step for man, one giant leap for mankind',
-        answer: '',
+        answer: 'Neil Armstrong',
       },
-      { question: 'The lady’s not for turning', answer: '' },
-      { question: 'Kiss me harder or was it Kismet Hardy.', answer: '' },
-      { question: 'I am your father', answer: '' },
-      { question: 'Float like a butterfly, sting like a bee', answer: '' },
-      { question: 'I have a dream', answer: '' },
-      { question: 'Good moaning', answer: '' },
-      { question: 'We’re going to be in the Hudson', answer: '' },
-      { question: 'You stupid boy!', answer: '' },
-      { question: 'Nice to see you, to see you nice', answer: '' },
+      { question: 'The lady’s not for turning', answer: 'Margaret Thatcher' },
+      {
+        question: 'Kiss me harder or was it Kismet Hardy.',
+        answer: 'Horatio Nelson',
+      },
+      { question: 'I am your father', answer: 'Darth Vader' },
+      {
+        question: 'Float like a butterfly, sting like a bee',
+        answer: 'Mohamed Ali',
+      },
+      { question: 'I have a dream', answer: 'Dr Martin Luther King' },
+      { question: 'Good moaning', answer: 'Officer Crabtree' },
+      {
+        question: 'We’re going to be in the Hudson',
+        answer: 'Captain Chesley "Sully" Sullenberger',
+      },
+      { question: 'You stupid boy!', answer: 'Captain Mainwaring' },
+      {
+        question: 'Nice to see you, to see you nice',
+        answer: 'Bruce Forsythe',
+      },
       {
         question: 'Life is what happens when you are busy making other plans',
-        answer: '',
+        answer: 'John Lennon',
       },
     ],
   },
