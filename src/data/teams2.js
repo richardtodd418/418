@@ -28,7 +28,7 @@ const teams2 = [
       { round: 2, score: 15, max: 20 },
       { round: 3, score: 0, max: 20 },
       { round: 4, score: 12, max: 20 },
-      { round: 5, score: '', max: 20 },
+      { round: 5, score: 0, max: 20 },
       { round: 6, score: '', max: 20 },
       { round: 7, score: '', max: 20 },
     ],
