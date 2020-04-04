@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-// Cousings
+// Cousins
 
 const teamTemplate = {
   name: '',
@@ -30,7 +30,8 @@ const teams2 = [
       { round: 4, score: 12, max: 20 },
       { round: 5, score: 0, max: 20 },
       { round: 6, score: 9, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 5, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {
@@ -43,7 +44,8 @@ const teams2 = [
       { round: 4, score: 14, max: 20 },
       { round: 5, score: 15, max: 20 },
       { round: 6, score: 17, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 12, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {
@@ -56,7 +58,8 @@ const teams2 = [
       { round: 4, score: 5, max: 20 },
       { round: 5, score: 9, max: 20 },
       { round: 6, score: 11, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 6, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {
@@ -69,7 +72,8 @@ const teams2 = [
       { round: 4, score: 19, max: 20 },
       { round: 5, score: 17, max: 20 },
       { round: 6, score: 20, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 8, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {
@@ -82,7 +86,8 @@ const teams2 = [
       { round: 4, score: 18, max: 20 },
       { round: 5, score: 16, max: 20 },
       { round: 6, score: 19, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 15, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {
@@ -95,7 +100,8 @@ const teams2 = [
       { round: 4, score: 18, max: 20 },
       { round: 5, score: 17, max: 20 },
       { round: 6, score: 17, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 17, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {
@@ -108,7 +114,8 @@ const teams2 = [
       { round: 4, score: 12, max: 20 },
       { round: 5, score: 7, max: 20 },
       { round: 6, score: 8, max: 20 },
-      { round: 7, score: '', max: 20 },
+      { round: 7, score: 0, max: 20 },
+      { round: 8, score: '', max: 20},
     ],
   },
   {name: `Daryle & the Spanner`,
@@ -120,7 +127,8 @@ const teams2 = [
     { round: 4, score: 12, max: 20 },
     { round: 5, score: 18, max: 20 },
     { round: 6, score: 16, max: 20 },
-    { round: 7, score: '', max: 20 },
+    { round: 7, score: 14, max: 20 },
+    { round: 8, score: '', max: 20},
   ],}
 ];
 

@@ -1,6 +1,6 @@
 .leaderboard {
   display: grid;
-  grid-template-columns: auto repeat(8, 1fr);
+  grid-template-columns: auto repeat(9, 1fr);
   margin: 15px auto;
   border-radius: 1px;
   background-color: white;
@@ -36,7 +36,7 @@
   
   @include media-query($small) {
     font-size: 1.5rem;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     justify-content: center;
 
     .leaderboard__team {

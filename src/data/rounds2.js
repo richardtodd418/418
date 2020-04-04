@@ -1,7 +1,7 @@
 // Cousin
 
 /* eslint-disable no-unused-vars */
-const publish_answers = [true, true, true, true, true, false, false];
+const publish_answers = [true, true, true, true, true, true, true, false];
 
 const blankRound = [
   {
@@ -10,8 +10,8 @@ const blankRound = [
     deadline: '',
     show_answers: false,
     form: true,
-    published: false,
-    publish_answers: publish_answers[1],
+    published: true,
+    publish_answers: publish_answers[7],
     questions: [
       { question: '', answer: '' },
       { question: '', answer: '' },
@@ -39,47 +39,79 @@ const blankRound = [
 
 const rounds2 = [
   {
-    title: '7. Nursery Rhymes',
-    date: '2020/04/03',
-    deadline: '2020/04/04 20:00',
+    title: 'Lists - One answer out of many',
+    date: '2020/04/04',
+    deadline: '2020/04/05 20:00',
     show_answers: false,
     form: true,
     published: true,
+    publish_answers: publish_answers[7],
+    questions: [
+      { question: 'Winners of at least 3 academy awards for acting (Lead role or supporting role)', answer: '' },
+      { question: 'Tottenham players who scored more than 125 goals for the club', answer: '' },
+      { question: 'Artists/Groups with more than 10 UK number 1 singles', answer: '' },
+      { question: 'Countries outside the UK Richard has visited', answer: '' },
+      { question: 'Top 10 produced food crops worldwide', answer: '' },
+      { question: 'Non-insect animals with more than 4 legs', answer: '' },
+      { question: 'Top components that make up air on earth', answer: '' },
+      { question: 'Biggest moons in the solar system', answer: '' },
+      { question: 'YouTube Videos with more than 5 billion views', answer: '' },
+      { question: 'Labour Prime Ministers of the 20th Century', answer: '' },
+      { question: '21st Century darts world champions', answer: '' },
+      { question: 'Ruling Queens of England', answer: '' },
+      { question: `UK's favourite home meals`, answer: '' },
+      { question: `Top 10 appearing non-Simpson family Simpson's characters`, answer: '' },
+      { question: 'Countries with a population greater than 200 million people', answer: '' },
+      { question: `Non-fictional rulers featured in the titles of Shakespeare's histories`, answer: '' },
+      { question: `Ingredients in Rick Bayless' Chile Con Carne `, answer: '' },
+      { question: 'British individuals who won multiple gold and/or silver medal winners at the 2012 Summer Olympics', answer: '' },
+      { question: 'Seven wonders of the ancient world', answer: '' },
+      { question: 'Films directed by Quentin Tarantino', answer: '' },
+      { question: `BONUS: Richard Todd's favourite national cuisines`, answer: ''}
+    ],
+  },
+  {
+    title: '7. Nursery Rhymes',
+    date: '2020/04/03',
+    deadline: '2020/04/04 20:00',
+    show_answers: true,
+    form: false,
+    published: true,
     publish_answers: publish_answers[6],
     questions: [
-      { question: 'How many blind mice were there?', answer: '' },
-      { question: 'What did nimble jack jump over?', answer: '' },
-      { question: 'What was the queen eating in her parlour?', answer: '' },
-      { question: 'Why was the old man thrown down the stairs?', answer: `` },
+      { question: 'How many blind mice were there?', answer: 'Three' },
+      { question: 'What did nimble jack jump over?', answer: 'A candle stick' },
+      { question: 'What was the queen eating in her parlour?', answer: 'Bread and honey' },
+      { question: 'Why was the old man thrown down the stairs?', answer: `Because he wouldn't say his prayers` },
       {
         question: 'What was the colour of the owl’s and the pussy cat’s boat',
-        answer: '',
+        answer: 'Pea green',
       },
-      { question: 'To where would you ride a cock horse?', answer: '' },
-      { question: 'Who lost her sheep?', answer: '' },
+      { question: 'To where would you ride a cock horse?', answer: 'Banbury Cross' },
+      { question: 'Who lost her sheep?', answer: 'Little Bo Peep' },
       {
         question: 'What would give to your sons if you had no daughters?',
-        answer: '',
+        answer: 'Hot cross buns',
       },
-      { question: 'Who came tumbling after?', answer: '' },
+      { question: 'Who came tumbling after?', answer: 'Jill' },
       {
         question:
           'What was Wee Willy Winkie wearing when he ran through the street?',
-        answer: '',
+        answer: 'Nightgown',
       },
-      { question: 'Who came to see the nut tree?', answer: `` },
+      { question: 'Who came to see the nut tree?', answer: `The king of Spain's daugher` },
       {
         question: 'For how long had the Pease pudding been in the pot?',
-        answer: '',
+        answer: 'Nine days',
       },
-      { question: 'Who is going to pay up when rich?', answer: '' },
-      { question: 'From what did Jack pull the plum?', answer: '' },
-      { question: 'Who found the pocket?', answer: '' },
-      { question: 'Who could eat no lean?', answer: `` },
-      { question: 'Who was warming her pretty little toes?', answer: '' },
-      { question: 'Which ladybird escaped the conflagration?', answer: '' },
-      { question: 'Who said to whom tomorrow will be Monday?', answer: '' },
-      { question: 'Who did puss look at in London?', answer: '' },
+      { question: 'Who is going to pay up when rich?', answer: 'The bells of Shoreditch' },
+      { question: 'From what did Jack pull the plum?', answer: 'A Christmas pie' },
+      { question: 'Who found the pocket?', answer: 'Kitty Fisher' },
+      { question: 'Who could eat no lean?', answer: `Jack Spratt's wife` },
+      { question: 'Who was warming her pretty little toes?', answer: 'Litte Polly Flinders' },
+      { question: 'Which ladybird escaped the conflagration?', answer: 'Ann' },
+      { question: 'Who said to whom tomorrow will be Monday?', answer: 'Tommy Snooks to Bessy Brooks' },
+      { question: 'Who did puss look at in London?', answer: 'The Queen' },
     ],
   },
   {
@@ -87,8 +119,8 @@ const rounds2 = [
     date: '2020/04/02',
     deadline: '2020/04/03 20:00',
     show_answers: true,
-    published: false,
     form: false,
+    published: true,
     publish_answers: publish_answers[5],
     questions: [
       { question: 'Regent or Bond? (7,6)', answer: 'Quality Street' },
