@@ -26,6 +26,7 @@ const Quiz = () => {
   return (
     <div className="quiz-wrapper">
       <Banner title="Round 8" status="info">
+        <strong>FINAL ROUND</strong><br/>
         Lists - final round. Each question has multiple potential correct
         answers. You only need to pick one. However there are rules:
         <ol>
