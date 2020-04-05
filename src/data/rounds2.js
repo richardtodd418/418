@@ -49,7 +49,7 @@ const rounds2 = [
     questions: [
       { question: 'Winners of at least 3 academy awards for acting (Lead role or supporting role)', answer: '' },
       { question: 'Tottenham players who scored more than 125 goals for the club', answer: '' },
-      { question: 'Artists/Groups with more than 10 UK number 1 singles', answer: '' },
+      { question: 'Artists or Groups with more than 10 UK number 1 singles', answer: '' },
       { question: 'Countries outside the UK Richard has visited', answer: '' },
       { question: 'Top 10 produced food crops worldwide', answer: '' },
       { question: 'Non-insect animals with more than 4 legs', answer: '' },
@@ -67,7 +67,6 @@ const rounds2 = [
       { question: 'British individuals who won multiple gold and/or silver medal winners at the 2012 Summer Olympics', answer: '' },
       { question: 'Seven wonders of the ancient world', answer: '' },
       { question: 'Films directed by Quentin Tarantino', answer: '' },
-      { question: `BONUS: Richard Todd's favourite national cuisines`, answer: ''}
     ],
   },
   {
