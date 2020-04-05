@@ -311,14 +311,14 @@ const rounds2 = [
       {
         question: 'Films directed by Quentin Tarantino',
         answer: `
-        Reservoir Dogs\n
+        Reservoir Dogs (Multiple answers - 0)\n
         Jackie Brown\n
         Kill Bill: Volume 1 (Kill Bill accepted)\n
         Kill Bill: Volume 2\n
         Grindhouse: Death Proof (Death Proof accepted\n
         Inglourious Basterds (Multiple answers - 0)\n
         Django Unchained\n
-        The Hateful Eight (Multiple answers - 0)\n
+        The Hateful Eight\n
         Once Upon a Time in Hollywood
       `,
       },
