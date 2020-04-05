@@ -1,7 +1,9 @@
+// (Multiple answers - 0)
+
 // Cousin
 
 /* eslint-disable no-unused-vars */
-const publish_answers = [true, true, true, true, true, true, true, false];
+const publish_answers = [true, true, true, true, true, true, true, true];
 
 const blankRound = [
   {
@@ -42,31 +44,297 @@ const rounds2 = [
     title: 'Lists - One answer out of many',
     date: '2020/04/04',
     deadline: '2020/04/05 20:00',
-    show_answers: false,
-    form: true,
+    show_answers: true,
+    form: false,
     published: true,
     publish_answers: publish_answers[7],
     questions: [
-      { question: 'Winners of at least 3 academy awards for acting (Lead role or supporting role)', answer: '' },
-      { question: 'Tottenham players who scored more than 125 goals for the club', answer: '' },
-      { question: 'Artists or Groups with more than 10 UK number 1 singles', answer: '' },
-      { question: 'Countries outside the UK Richard has visited', answer: '' },
-      { question: 'Top 10 produced food crops worldwide', answer: '' },
-      { question: 'Non-insect animals with more than 4 legs', answer: '' },
-      { question: 'Top components that make up air on earth', answer: '' },
-      { question: 'Biggest moons in the solar system', answer: '' },
-      { question: 'YouTube Videos with more than 5 billion views', answer: '' },
-      { question: 'Labour Prime Ministers of the 20th Century', answer: '' },
-      { question: '21st Century darts world champions', answer: '' },
-      { question: 'Ruling Queens of England', answer: '' },
-      { question: `UK's favourite home meals`, answer: '' },
-      { question: `Top 10 appearing non-Simpson family Simpson's characters`, answer: '' },
-      { question: 'Countries with a population greater than 200 million people', answer: '' },
-      { question: `Non-fictional rulers featured in the titles of Shakespeare's histories`, answer: '' },
-      { question: `Ingredients in Rick Bayless' Chile Con Carne `, answer: '' },
-      { question: 'British individuals who won multiple gold and/or silver medal winners at the 2012 Summer Olympics', answer: '' },
-      { question: 'Seven wonders of the ancient world', answer: '' },
-      { question: 'Films directed by Quentin Tarantino', answer: '' },
+      {
+        question:
+          'Winners of at least 3 academy awards for acting (Lead role or supporting role)',
+        answer: `
+        Katharine Hepburn\n
+        Meryle Streep (Multiple answers - 0)\n
+        Daniel Day-Lewis (Multiple answers - 0)\n
+        Jack Nicholson\n
+        Walter Brennan`,
+      },
+      {
+        question:
+          'Tottenham players who scored more than 125 goals for the club',
+        answer: `
+        Jimmy Greaves\n
+      Bobby Smith\n
+      Harry Kane\n
+      Martin Chivers\n
+      Cliff Jones\n
+      Jermain Defoe (Multiple answers - 0)\n
+      George Hunt\n
+      Len Duquemin\n
+      Alan Gilzean`,
+      },
+      {
+        question: 'Artists or Groups with more than 10 UK number 1 singles',
+        answer: `
+        Elvis Presley\n
+        The Beatles (Multiple answers - 0)\n
+        Cliff Richard\n
+        Westlife\n
+        Madonna\n
+        The Shadows\n
+        Take That`,
+      },
+      {
+        question: 'Countries outside the UK Richard has visited',
+        answer: `
+      Ireland\n
+      France\n
+      Spain\n
+      Portugal\n
+      Italy\n
+      Poland\n
+      Belgium\n
+      Netherlands\n
+      Germany (Multiple answers - 0)\n
+      Greece\n
+      Hungary\n
+      Romania\n
+      Bulgaria\n
+      Austria\n
+      Korea\n
+      Thailand\n
+      Philippines\n
+      Japan (Multiple answers - 0)\n
+      Vietnam\n
+      Canada\n
+      Czech Republic`,
+      },
+      {
+        question: 'Top 10 produced food crops worldwide',
+        answer: `
+      Sugarcane\n
+      Maize\n
+      Rice\n
+      Wheat\n
+      Potatoes\n
+      Soybeans\n
+      Cassava (yuca) (Bonus point)\n
+      Tomatoes\n
+      Bananas (Multiple answers - 0)\n
+      Sweet Potato`,
+      },
+      {
+        question: 'Non-insect animals with more than 4 legs',
+        answer: `
+      Octupus\n
+      Crab\n
+      Starfish\n
+      King crab\n
+      Spider (Bonus point)\n
+      Lobster (Multiple answers - 0)
+      `,
+      },
+      {
+        question: 'Top components that make up air on earth',
+        answer: `
+      Nitrogen (Multiple answers - 0)\n
+      Oxygen\n
+      Argon (Multiple answers - 0)\n 
+      Carbon Dioxide (Multiple answers - 0)\n
+      Neon\n
+      Helium\n
+      Methane\n
+      Krypton\n
+      Water (Bonus point) 
+      `,
+      },
+      {
+        question: 'Biggest moons in the solar system',
+        answer: `
+      Ganymede (Multiple answers - 0)\n
+      Titan\n
+      Callisto\n
+      Io\n
+      The Moon (Bonus point)\n
+      Europa\n
+      Triton\n
+      Titania\n
+      Rhea\n
+      Oberon
+      `,
+      },
+      {
+        question: 'YouTube Videos with more than 5 billion views',
+        answer: `
+        Descpacito\n
+        Baby Shark Dance (Multiple answers - 0)
+      `,
+      },
+      {
+        question: 'Labour Prime Ministers of the 20th Century',
+        answer: `
+      Tony Blair\n
+      James Callaghan (Multiple answers - 0)\n
+      Harold Wilson\n
+      Clement Atlee\n
+      Ramsay MacDonald (Multiple answers - 0)
+      `,
+      },
+      {
+        question: '21st Century darts world champions',
+        answer: `
+       Ted Hankey \n
+       John Walton\n
+       Tony David\n
+       Raymond van Barneveld \n
+       Andy Fordham\n
+       Jelle Klaasen\n
+       Martin Adams\n
+       Mark Webster \n
+       Martin Adams \n
+       Christian Kist \n
+       Scott Waites \n
+       Stephen Bunting \n
+       Scott Mitchell\n
+       Glen Durrant\n
+       Wayne Warren\n
+       Phil Taylor\n
+       John Part\n
+       Adrian Lewis (Multiple answers - 0)\n
+       Michael Van Gerwin\n
+       Gary Anderson\n
+       Rob Cross\n
+       Peter Wright
+      `,
+      },
+      {
+        question: 'Ruling Queens of England',
+        answer: `
+      Elizabeth I\n
+      Lady Jane Grey (Multiple answers - 0)\n
+      Mary I\n
+      Mary II\n
+      Matilda\n
+      Anne
+      `,
+      },
+      {
+        question: `UK's favourite home meals`,
+        answer: `
+      Spag Bol\n
+      Pizza\n
+      Roast dinner\n
+      Fish fingers\n
+      Fish and Chips  (Multiple answers - 0)\n
+      Beans on Toast
+      `,
+      },
+      {
+        question: `Top 10 appearing non-Simpson family Simpson's characters`,
+        answer: `
+          Apu Nahasapeemapetilon\n
+          Milhouse Van Houten (Multiple answers - 0)\n
+          Chief Clancy Wiggum\n
+          Charles Montgomery Burns (Multiple answers - 0)\n
+          Ned Flanders\n
+          Seymour Skinner\n
+          Moe Syzlak\n
+          Kent Brockman\n
+          Krusty the Clown (Herschel Shmoikel Pinchas Yerucham Krustofsky) (Bonus point for full name)\n
+          Lenny Leonard
+        `,
+      },
+      {
+        question: 'Countries with a population greater than 200 million people',
+        answer: `
+        China\n
+        India (Multiple answers - 0)\n
+        United States\n
+        Indonesia\n
+        Pakistan\n
+        Brazil\n
+        Nigeria\n
+        `,
+      },
+      {
+        question: `Non-fictional rulers featured in the titles of Shakespeare's histories`,
+        answer: `
+        Julius Caesar\n
+        Cleopatra\n
+        Henry V\n
+        Henry IV\n
+        Henry VI\n
+        Richard III\n
+        Henry VIII\n
+        King John\n
+        Edward III (Multiple answers - 0)\n
+        Richard III
+        `,
+      },
+      {
+        question: `Ingredients in Rick Bayless' Chile Con Carne `,
+        answer: `
+      Dried chilies\n
+      Garlic\n
+      Onion (Multiple answers - 0)\n
+      Oregano\n
+      Cumin (Multiple answers - 0)\n
+      Lard\n
+      Salt\n
+      Beef
+      `,
+      },
+      {
+        question:
+          'British individuals who won multiple gold and/or silver medal winners at the 2012 Summer Olympics',
+        answer: `
+        Chris Hoy (Multiple answers - 0)\n
+        Jason Kenny\n
+        Charlotte Dujardin\n
+        Mo Farah (Multiple answers - 0)\n
+        Andy Murray\n
+        Victoria Pendleton
+        `,
+      },
+      {
+        question: 'Seven wonders of the ancient world',
+        answer: `
+        Great Pyramid of Giza, Egypt\n
+        Hanging Gardens of Babylon\n
+        Statue of Zeus at Olympia\n
+        Temple of Artemis at Ephesus\n
+        Mausoleum at Halicarnassus (Multiple answers - 0)\n
+        Colossus of Rhodes\n
+        Lighthouse of Alexandria
+      `,
+      },
+      {
+        question: 'Films directed by Quentin Tarantino',
+        answer: `
+        Reservoir Dogs\n
+        Jackie Brown\n
+        Kill Bill: Volume 1 (Kill Bill accepted)\n
+        Kill Bill: Volume 2\n
+        Grindhouse: Death Proof (Death Proof accepted\n
+        Inglourious Basterds (Multiple answers - 0)\n
+        Django Unchained\n
+        The Hateful Eight (Multiple answers - 0)\n
+        Once Upon a Time in Hollywood
+      `,
+      },
+      {
+        question: `BONUS: Richard Todd's favourite national cuisines`,
+        answer: `
+        Thai\n
+        Indian\n
+        Italian\n
+        Chinese (Multiple answers - 0)\n
+        British\n
+        Japanese\n
+        Levant\n
+        Mexican
+        `,
+      },
     ],
   },
   {
@@ -80,13 +348,22 @@ const rounds2 = [
     questions: [
       { question: 'How many blind mice were there?', answer: 'Three' },
       { question: 'What did nimble jack jump over?', answer: 'A candle stick' },
-      { question: 'What was the queen eating in her parlour?', answer: 'Bread and honey' },
-      { question: 'Why was the old man thrown down the stairs?', answer: `Because he wouldn't say his prayers` },
+      {
+        question: 'What was the queen eating in her parlour?',
+        answer: 'Bread and honey',
+      },
+      {
+        question: 'Why was the old man thrown down the stairs?',
+        answer: `Because he wouldn't say his prayers`,
+      },
       {
         question: 'What was the colour of the owl’s and the pussy cat’s boat',
         answer: 'Pea green',
       },
-      { question: 'To where would you ride a cock horse?', answer: 'Banbury Cross' },
+      {
+        question: 'To where would you ride a cock horse?',
+        answer: 'Banbury Cross',
+      },
       { question: 'Who lost her sheep?', answer: 'Little Bo Peep' },
       {
         question: 'What would give to your sons if you had no daughters?',
@@ -98,18 +375,33 @@ const rounds2 = [
           'What was Wee Willy Winkie wearing when he ran through the street?',
         answer: 'Nightgown',
       },
-      { question: 'Who came to see the nut tree?', answer: `The king of Spain's daugher` },
+      {
+        question: 'Who came to see the nut tree?',
+        answer: `The king of Spain's daugher`,
+      },
       {
         question: 'For how long had the Pease pudding been in the pot?',
         answer: 'Nine days',
       },
-      { question: 'Who is going to pay up when rich?', answer: 'The bells of Shoreditch' },
-      { question: 'From what did Jack pull the plum?', answer: 'A Christmas pie' },
+      {
+        question: 'Who is going to pay up when rich?',
+        answer: 'The bells of Shoreditch',
+      },
+      {
+        question: 'From what did Jack pull the plum?',
+        answer: 'A Christmas pie',
+      },
       { question: 'Who found the pocket?', answer: 'Kitty Fisher' },
       { question: 'Who could eat no lean?', answer: `Jack Spratt's wife` },
-      { question: 'Who was warming her pretty little toes?', answer: 'Litte Polly Flinders' },
+      {
+        question: 'Who was warming her pretty little toes?',
+        answer: 'Litte Polly Flinders',
+      },
       { question: 'Which ladybird escaped the conflagration?', answer: 'Ann' },
-      { question: 'Who said to whom tomorrow will be Monday?', answer: 'Tommy Snooks to Bessy Brooks' },
+      {
+        question: 'Who said to whom tomorrow will be Monday?',
+        answer: 'Tommy Snooks to Bessy Brooks',
+      },
       { question: 'Who did puss look at in London?', answer: 'The Queen' },
     ],
   },

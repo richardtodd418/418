@@ -91,7 +91,7 @@ const RoundInner = props => {
                     ) : question.answer === '' ? (
                       'Coming soon...'
                     ) : (
-                      question.answer
+                      question.answer.split('\n').map(answer => <p>{answer}</p>)
                     )}
                   </em>
                 </span>
